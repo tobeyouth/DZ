@@ -68,6 +68,17 @@
 		// 需要手动到相应的文件中进行修改，以解决冲突
 		
 
+###合并代码到主干上
+
+只有一个办法，那就是``告诉我，我给你合并``.
+
+
+###bonus
+
+- windows推荐使用[github的客户端](http://windows.github.com)
+- 合并冲突可以使用 [source tree](http://www.sourcetreeapp.com)来管理和解决。
+
+
 	
 	
 	
