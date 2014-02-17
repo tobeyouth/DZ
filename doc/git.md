@@ -9,12 +9,16 @@
 
 ###建立你本地的代码库
 1. 首先，你得打开``git``，mac用户可以基本无视这个过程；window用户需要双击桌面上的``git bash``图标。
+2. 在github上``fork``dz项目。
 2. 其次，你需要建立你本地的代码库，你可以通过以下命令来建立你的代码库：
 	
 		// 克隆代码库
-		git clone git@github.com:tobeyouth/DZ.git
+		git clone git@github.com:yourname/DZ.git
 		
-		// 建立远程库
+		// 建立两个远程库
+		// 你的分支远程库
+		git remote add projectremote git@github.com:yourname/DZ.git
+		// 项目主干远程库
 		git remote add dzremote git@github.com:tobeyouth/DZ.git
 		
 		// 同步远程库中的所有分支
@@ -62,15 +66,32 @@
 		git merge --no-ff merge_你的开发分支
 		
 		// 没有问题的话，你就可以提交了
-		git push dzproject 你的开发分支:remote_你的开发分支
+		git push dzremote 你的开发分支:remote_你的开发分支
 		
 		// 如果合并出现了问题，那一定是你的代码跟master中最新的代码有冲突
 		// 需要手动到相应的文件中进行修改，以解决冲突
+
+7. 这时，如果提交成功的话，你的代码就已经到了``你的分支的master``上，可以通过github项目页中的``merge requset``按钮来合并代码到你的项目master中。
+8. 然后，``发邮件,qq,或者微信``告诉我，我会帮你合并到项目的master上.
 		
 
 ###合并代码到主干上
 
-只有一个办法，那就是``告诉我，我给你合并``.
+只有一个办法，那就是``告诉我，我给你合并``
+
+###合并项目主干到你的分支主干上
+
+1. 首先切换到你本地的``master``上，然后更新项目主干
+		
+		// 更新项目主干
+		git fetch projectremote
+		// 更新你的分支主干
+		git pull
+2. 然后将项目主干合并到你的主干上：
+
+		git merge projectremote/master
+		
+3. 接下来就是继续开发代码了。
 
 
 ###bonus
