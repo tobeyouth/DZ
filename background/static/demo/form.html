@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>表单页</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/frame.css">
+	<script type="text/javascript" src="../js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">DZ产品管理后台</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">首页</a>
+					</li>
+					<li class="dropdown">
+						<a href="#about" class="dropdown-toggle" data-toggle="dropdown">选择产品类别<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">摄影</a></li>
+							<li><a href="#">录音</a></li>
+							<li><a href="#">美术</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户名 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">退出登录</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div class="container form-wrap">
+		<!-- 左侧列表 -->
+		<div class="col-xs-6 col-md-3">
+			<ul class="list-unstyled class-list">
+				<li class="class-item">
+					<span class="class-name">摄影机</span>
+					<ul class="list-unstyled type-list">
+						<li class="type-item active">
+							<span class="type-name">摄影机</span>
+						</li>
+						<li class="type-item">
+							<span class="type-name">镜头</span>
+						</li>
+						<li class="type-item">
+							<span class="type-name">云台/脚架</span>
+						</li>
+						<li class="type-item">
+							<span class="type-name">摄影机配件</span>
+						</li>
+					</ul>
+				</li>
+				<li class="class-item">
+					<span class="class-name">移动升降</span>
+				</li>
+				<li class="class-item">
+					<span class="class-name">灯光</span>
+				</li>
+			</ul>
+		</div>
+		<!-- 右侧内容 -->
+		<div class="col-xs-12 col-sm-6 col-md-9">
+			<form action="" role="form">
+				<!-- 基础信息 -->
+				<div class="form-block">
+					<h4>基础信息</h4>
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="col-sm-2 control-label">产品名称：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="inputPassword">
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="col-sm-2 control-label">品牌：</label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" id="inputPassword" >
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="col-sm-2 control-label">价格：</label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" id="inputPassword" >
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="col-sm-2 control-label">颜色：</label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" id="inputPassword" >
+						</div>
+					</div>
+				</div>
+				
+				<!-- 产品信息 -->
+				<div class="form-block">
+					<h4>产品信息</h4>
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="col-sm-2 control-label">产品类别：</label>
+						<div class="col-sm-6">
+							<select name="" id="" class="form-control">
+								<option value="">请选择产品类别</option>
+								<option value="">航拍摄影机</option>
+								<option value="">水下摄影机</option>
+								<option value="">高速摄影机</option>
+								<option value="">数字摄影机</option>
+								<option value="">其他</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="col-sm-2 control-label">光圈：</label>
+						<div class="col-sm-6">
+							<select name="" id="" class="form-control">
+								<option value="">请选择光圈类型</option>
+								<option value="">T1.0</option>
+								<option value="">T1.3</option>
+								<option value="">T1.9</option>
+								<option value="">T2.0</option>
+								<option value="">T2.2</option>
+								<option value="">T2.6</option>
+								<option value="">T2.8</option>
+								<option value="">T3.0及以上</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="inputPassword" class="col-sm-2 control-label">专业级别：</label>
+						<div class="col-sm-6">
+							<select name="" id="" class="form-control">
+								<option value="">请选择专业级别</option>
+								<option value="">民用</option>
+								<option value="">广播</option>
+								<option value="">电影</option>
+								<option value="">其他</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

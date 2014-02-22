@@ -1,0 +1,30 @@
+/**
+ * 后台列表页css
+ *
+ * 2014 02 23
+ * by jn
+ */
+body {margin-top: 70px;}
+.form-wrap {margin-top: }
+.class-list .class-name {
+	display: block;
+	padding: 0px 10px;
+	line-height: 34px;
+	background: #79c3d2;
+	color: #fff;
+	font-size: 20px;
+	margin-top: 2px;
+}
+.type-list .type-name {
+	display: block;
+	margin-left: 10px;
+	padding: 0px 10px;
+	line-height: 24px;
+	font-size: 14px;
+	margin-top: 2px;
+	background: #d9eef2;
+}
+.type-list .active .type-name {background: #143352;color: #fff;}
+.form-block {border: 1px solid #ccc;border-radius: 4px;padding: 10px;margin-bottom: 20px;}
+.form-block h4 {margin-bottom: 20px;}
+.form-block label {text-align: right;padding: 0px;line-height: 34px;}
