@@ -28,3 +28,18 @@ body {margin-top: 70px;}
 .form-block {border: 1px solid #ccc;border-radius: 4px;padding: 10px;margin-bottom: 20px;}
 .form-block h4 {margin-bottom: 20px;}
 .form-block label {text-align: right;padding: 0px;line-height: 34px;}
+.slide ul {
+	display: none;
+	-webkit-transition: all 0.3s ease;
+	   -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	     -o-transition: all 0.3s ease;
+	        transition: all 0.3s ease;
+}
+
+/*表单页*/
+.form-wrap .btn-box {margin: 20px 0px;}
+.form-wrap .btn-box .btn {margin-right:40px;}
+/*列表页*/
+.product-list {margin-top: 30px;}
+.product-list .table th,.product-list .table td {vertical-align: middle;}
