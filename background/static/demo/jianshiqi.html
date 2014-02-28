@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>表单页</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/frame.css">
+	<script type="text/javascript" src="../js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/frame.js"></script>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">DZ产品管理后台</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">首页</a>
+					</li>
+					<li class="dropdown">
+						<a href="#about" class="dropdown-toggle" data-toggle="dropdown">选择产品类别<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">摄影</a></li>
+							<li><a href="#">录音</a></li>
+							<li><a href="#">美术</a></li>
+							<li><a href="#">道具</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">用户名 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">退出登录</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div class="container-fluid row  frame-wrap">
+		<!-- 左侧列表 -->
+		<div class="col-xs-2 col-md-2 side-bar">
+			<ul class="nav list-unstyled class-list">
+				<li class="class-item slide">
+					<a href="#" class="class-name">摄影</a>
+					<ul class="list-unstyled type-list">
+						<li class="type-item">
+							<a href="#" class="type-name">摄影机</a>
+						</li>
+						<li class="type-item">
+							<a href="" class="type-name">镜头</a>
+						</li>
+						<li class="type-item slide">
+							<a href="#" class="type-name">云台/脚架</a>
+							<ul class="list-unstyled sub-list">
+								<li class="sub-item">
+									<a href="#" class="sub-name">云台</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">脚架</a>
+								</li>
+							</ul>
+						</li>
+						<li class="type-item slide">
+							<a href="#" class="type-name">摄影机配件</a>
+							<ul class="list-unstyled sub-list">
+								<li class="sub-item">
+									<a href="#" class="sub-name">导演取景器</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">电池</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">监视器</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">无线/手动跟焦</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">滤色片</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">附件</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="class-item slide">
+					<a href="#" class="class-name">移动升降</a>
+					<ul class="list-unstyled type-list">
+						<li class="type-item">
+							<a href="#" class="type-name">摇臂</a>
+						</li>
+						<li class="type-item">
+							<a href="#" class="type-name">轨道车</a>
+						</li>
+						<li class="type-item">
+							<a href="#" class="type-name">遥控头</a>
+						</li>
+						<li class="type-item">
+							<a href="#" class="type-name">稳定器</a>
+						</li>
+					</ul>
+				</li>
+				<li class="class-item slide">
+					<a href="#" class="class-name">灯光</a>
+					<ul class="list-unstyled type-list">
+						<li class="type-item">
+							<a href="#" class="type-name">灯</a>
+						</li>
+						<li class="type-item">
+							<a href="#" class="type-name">灯腿</a>
+						</li>
+						<li class="type-item">
+							<a href="#" class="type-name">调光器</a>
+							<ul class="list-unstyled sub-list">
+								<li class="sub-item">
+									<a href="#" class="sub-name">镇流器</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">火光发生器</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">电子调压器</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">自耦调压器</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">调光硅箱</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">调光台</a>
+								</li>
+							</ul>
+						</li>
+						<li class="type-item slide">
+							<a href="#" class="type-name">附件</a>
+							<ul class="list-unstyled sub-list">
+								<li class="sub-item">
+									<a href="#" class="sub-name">色纸</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">框架</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">蝶布</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">发电机</a>
+								</li>
+								<li class="sub-item">
+									<a href="#" class="sub-name">电线</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- 右侧内容 -->
+		<div class="col-xs-10 col-md-10 right-content">
+			<form action="" role="form">
+				<!-- 基础信息 -->
+				<div class="form-block">
+					<h4>基础信息</h4>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">产品名称：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="">
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">品牌：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" >
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">价格：</label>
+						<div class="input-group col-sm-6" style="padding:0px 15px;">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control" id="" >
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">颜色：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" >
+						</div>
+					</div>
+				</div>
+				<!-- 产品信息 -->
+				<div class="form-block">
+					<h4>产品信息</h4>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">屏幕尺寸：</label>
+						<div class="input-group col-sm-6" style="padding:0px 15px;">
+							<input type="text" class="form-control" id="">
+							<span class="input-group-addon">英寸</span>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">像素：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" >
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">点距：</label>
+						<div class="input-group col-sm-6">
+							<input type="text" class="form-control" id="" >
+							<span class="input-group-addon">mm</span>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">显示比例：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="checkbox checkbox-inline">
+						        	<input type="checkbox" value="remember-me"> 16:9
+						        </label>
+							</div>
+							<div class="col-sm-2">
+						        <label class="checkbox checkbox-inline">
+						        	<input type="checkbox" value="remember-me"> 4:3
+						        </label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">亮度：</label>
+						<div class="input-group col-sm-6">
+							<input type="text" class="form-control" id="" >
+							<span class="input-group-addon">cd/㎡</span>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">对比度：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" >
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">反应速度：</label>
+						<div class="input-group col-sm-6">
+							<input type="text" class="form-control" id="" />
+							<span class="input-group-addon">ms</span>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">可视视角：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="" >
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">电源电压：</label>
+						<div class="input-group col-sm-6">
+							<input type="text" class="form-control" id="" >
+							<span class="input-group-addon">v</span>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">功率消耗：</label>
+						<div class="input-group col-sm-6">
+							<input type="text" class="form-control" id="" >
+							<span class="input-group-addon">w</span>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">外观尺寸：</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="" placeholder="长" />
+						</div>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id=""  placeholder="宽" />
+						</div>
+						<div class="input-group col-sm-2">
+							<input type="text" class="form-control" id=""  placeholder="高" />
+							<span class="input-group-addon">mm</span>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">重量：</label>
+						<div class="input-group col-sm-6">
+							<input type="text" class="form-control" id="" >
+							<span class="input-group-addon">kg</span>
+						</div>
+					</div>
+				</div>
+				<!-- 视频输入 -->
+				<div class="form-block">
+					<h4>视频输入</h4>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">复合视频：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">分量（Y/Pb/Pr）：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">HD/SD-SDI：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />HD
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />SD-SDI
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">HDMI：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">SDI 嵌入音频：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">VF总线输入：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 视频输出 -->
+				<div class="form-block">
+					<h4>视频输出</h4>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">分量（Y/Pb/Pr）：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">HD/SD-SDI：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />HD
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />SD-SDI
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">HDMI：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">音频监听：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">音频输入：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">SDI嵌入音频：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">TALLY显示：</label>
+						<div class="col-sm-6">
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />是
+								</label>
+							</div>
+							<div class="col-sm-2">
+								<label class="radio" for="">
+									<input type="radio" />否
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 按钮 -->
+				<div class="btn-box">
+					<button type="submit" class="btn btn-primary btn-lg">保存</button>
+					<button type="reset" class="btn btn-warning btn-lg">充填</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
