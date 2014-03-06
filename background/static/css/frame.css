@@ -65,8 +65,8 @@ body {margin-top: 70px;background-color: #f5f5f5;}
 
 
 /*表单页*/
+.right-content {background-color: #fff;padding: 20px 50px;min-height: 800px;}
 .right-content .add-btn {margin-left: 10px;}
-.right-content {background-color: #fff;padding: 20px 50px;}
 .right-content .btn-box {margin: 20px 0px 20px 210px;}
 .right-content .btn-box .btn {margin-right:40px;}
 /*列表页*/
