@@ -1,0 +1,74 @@
+/**
+ * 后台列表页css
+ *
+ * 2014 02 23
+ * by jn
+ */
+body {margin-top: 70px;background-color: #f5f5f5;}
+.frame-wrap {margin-top:-20px;}
+.class-list a:hover {background-color: #eee;color: #2a6496;text-decoration: none;}
+.class-list a {
+	display: block;
+	color: #999;
+	padding: 10px;
+	line-height: 20px;
+	font-size: 14px;
+	margin-bottom: 2px;
+}
+.type-list a {
+	margin-left: 10px;
+}
+.type-list .slide>a:after {
+	content: '>';
+	margin-left: 5px;
+}
+.sub-list a {
+	margin-left: 20px;
+}
+/*.sub-list a:before {
+	content:'>';
+	margin-right: 5px;
+}*/
+.class-list .active,.class-list .active:hover {
+	background: #428bca;
+	color: #fff;
+}
+.form-block {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.form-block h4 {
+	margin:20px 30px 30px 50px;
+}
+.form-block label {
+	text-align: right;
+	padding: 0px;
+	line-height: 34px;
+}
+.form-block .input-group {padding: 0px 15px;}
+.form-block .checkbox,.form-block .radio {margin-top: 0px;text-align: left;}
+.form-block .checkbox input[type=checkbox],.form-block .radio input[type=radio]{margin-top: 10px;}
+.slide ul {
+	display: none;
+	-webkit-transition: all 0.3s ease;
+	   -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	     -o-transition: all 0.3s ease;
+	        transition: all 0.3s ease;
+}
+.slide-down>ul {
+	display: block;
+}
+.side-bar {padding: 20px 0px;}
+
+
+/*表单页*/
+.right-content .add-btn {margin-left: 10px;}
+.right-content {background-color: #fff;padding: 20px 50px;}
+.right-content .btn-box {margin: 20px 0px 20px 210px;}
+.right-content .btn-box .btn {margin-right:40px;}
+/*列表页*/
+.product-list {margin-top: 30px;}
+.product-list .table th,.product-list .table td {vertical-align: middle;}
