@@ -1,0 +1,136 @@
+body {
+  background-color: #eee; }
+
+.content-wrap {
+  background-color: #fff; }
+
+.wrap {
+  width: 1200px;
+  margin: 20px auto 0px auto; }
+
+.search-content .search-bar {
+  clear: both;
+  overflow: hidden;
+  zoom: 1;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px; }
+  .search-content .search-bar .search-input {
+    width: 100%;
+    border-radius: 0px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0px 15px;
+    float: left;
+    width: 78%; }
+  .search-content .search-bar .search-btn {
+    width: 20%;
+    float: right; }
+
+.hot-keys {
+  clear: both;
+  overflow: hidden;
+  line-height: 20px;
+  padding: 10px 0px; }
+  .hot-keys .key {
+    color: #999;
+    display: inline-block;
+    margin-right: 10px; }
+
+.product-list {
+  background-color: #fff;
+  color: #fff; }
+  .product-list .title {
+    padding: 0px 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background-color: #3498db;
+    border-bottom: 1px solid #fff; }
+  .product-list .list-item {
+    padding: 10px 10px 10px 50px;
+    position: relative;
+    zoom: 1;
+    cursor: pointer;
+    background-color: #3498db;
+    border-bottom: 1px solid #fff; }
+    .product-list .list-item .name {
+      font-size: 18px; }
+    .product-list .list-item a {
+      color: #fff; }
+    .product-list .list-item .list-layer {
+      position: absolute;
+      width: 350px;
+      padding: 10px;
+      background-color: #fff;
+      border: 2px solid #217dbb;
+      left: 100%;
+      top: -100%;
+      display: none; }
+      .product-list .list-item .list-layer a {
+        color: #2a6496;
+        display: inline-block;
+        padding: 0px 5px;
+        height: 18px;
+        line-height: 18px; }
+        .product-list .list-item .list-layer a:hover {
+          background-color: #217dbb;
+          color: #fff;
+          text-decoration: none; }
+      .product-list .list-item .list-layer dt {
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 24px; }
+        .product-list .list-item .list-layer dt a {
+          color: #333; }
+          .product-list .list-item .list-layer dt a:hover {
+            background-color: #fff;
+            color: #333;
+            text-decoration: underline; }
+    .product-list .list-item:hover {
+      background-color: #217dbb; }
+      .product-list .list-item:hover .list-layer {
+        display: block; }
+
+.search-content {
+  padding: 20px 0px 10px 0px; }
+  .search-content .search-bar {
+    position: relative;
+    zoom: 1; }
+
+.hot-keys {
+  margin: 0px; }
+
+.wexin-code {
+  text-align: center;
+  padding: 7px 0px; }
+  .wexin-code p {
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px; }
+
+.logo-box {
+  width: 270px;
+  float: left; }
+
+.logo {
+  display: block;
+  background-color: #5faee3;
+  color: #fff;
+  height: 160px; }
+
+.header-content {
+  margin-left: 290px;
+  margin-right: 20px;
+  overflow: hidden; }
+
+.header-search {
+  padding: 0px;
+  background-color: #fff; }
+
+.search-content .title {
+  line-height: 24px;
+  font-size: 16px;
+  font-family: 'Microsoft YaHei';
+  padding-bottom: 10px; }

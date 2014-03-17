@@ -1,0 +1,127 @@
+@import "var.scss";
+
+body {
+	background-color:#eee;
+}
+%content {
+	background-color:#fff;
+}
+
+.content-wrap {
+	@extend %content;
+}
+
+.wrap {
+	width:1200px;
+	margin:20px auto 0px auto;
+}
+%search-bar {
+	clear:both;
+	overflow:hidden;
+	zoom:1;
+	background:rgba(0,0,0,0.3);
+	padding:5px;
+	.search-input {
+		width: 100%;
+		border-radius:0px;
+		height:45px;
+		line-height: 45px;
+		padding:0px 15px;
+		float: left;
+		width: 78%;
+	}
+	.search-btn {
+		width:20%;
+		float: right;
+	}
+}
+
+%hot-keys {
+	clear:both;
+	overflow:hidden;
+	line-height:20px;
+	padding:10px 0px;
+	.key {
+		color: #999;
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+
+%product-list {
+	background-color:#fff;
+	color:#fff;
+	
+	.title {
+		padding:0px 10px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 14px;
+		background-color:$main-color;
+		border-bottom:1px solid #fff;
+	}
+
+	.list-item {
+		padding:10px 10px 10px 50px;
+		position: relative;
+		zoom: 1;
+		cursor: pointer;
+		background-color:$main-color;
+		border-bottom:1px solid #fff;
+
+		.name {
+			font-size: 18px;
+		}
+
+		a {
+			color: #fff;
+		}
+
+		.list-layer {
+			position:absolute;
+			width: 350px;
+			padding:10px;
+			background-color:#fff;
+			border:2px solid $dark-main-color;
+			left:100%;
+			top:-100%;
+			display: none;
+
+			a {
+				color: $link;
+				display: inline-block;
+				padding:0px 5px;
+				height: 18px;
+				line-height: 18px;
+
+				&:hover {
+					background-color:$dark-main-color;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+
+			dt {
+				font-size: 14px;
+				margin-bottom: 10px;
+				line-height: 24px;
+				a {
+					color: #333;
+					&:hover {
+						background-color:#fff;
+						color: #333;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		
+		&:hover {
+			background-color:$dark-main-color;
+			.list-layer {
+				display: block;
+			}
+		}
+
+	}
+}
