@@ -1,10 +1,13 @@
 @import "var.scss";
 
-body {
-	background-color:#eee;
-}
 %content {
 	background-color:#fff;
+}
+
+%relative {
+	position: relative;
+	zoom:1;
+	z-index:1;
 }
 
 .content-wrap {
@@ -49,55 +52,60 @@ body {
 }
 
 %product-list {
-	background-color:#fff;
-	color:#fff;
+	color:$word-color;
 	
 	.title {
 		padding:0px 10px;
 		height: 40px;
 		line-height: 40px;
 		font-size: 14px;
-		background-color:$main-color;
 		border-bottom:1px solid #fff;
 	}
 
 	.list-item {
-		padding:10px 10px 10px 50px;
-		position: relative;
-		zoom: 1;
-		cursor: pointer;
-		background-color:$main-color;
-		border-bottom:1px solid #fff;
+		@extend %relative;
+		.tag-item {
+			padding:5px 5px 5px 30px;
+			@extend %relative;
+			cursor: pointer;
+			border-bottom:1px solid #fff;
+			background-color:#fff;
+		}
 
 		.name {
 			font-size: 18px;
+			margin-bottom:5px;
 		}
 
 		a {
-			color: #fff;
+			color: $word-color;
+			&:hover {
+				text-shadow: 0px 0px 4px $word-shadow;
+			}
 		}
 
 		.list-layer {
 			position:absolute;
+			z-index: 10;
 			width: 350px;
 			padding:10px;
 			background-color:#fff;
-			border:2px solid $dark-main-color;
+			border:1px solid $border-color;
 			left:100%;
+			margin-left: -1px;
 			top:-100%;
 			display: none;
 
 			a {
-				color: $link;
+				// color: $link;
 				display: inline-block;
 				padding:0px 5px;
 				height: 18px;
 				line-height: 18px;
 
 				&:hover {
-					background-color:$dark-main-color;
-					color: #fff;
-					text-decoration: none;
+					color: $word-color
+							
 				}
 			}
 
@@ -106,10 +114,9 @@ body {
 				margin-bottom: 10px;
 				line-height: 24px;
 				a {
-					color: #333;
+					color: $word-color;
 					&:hover {
-						background-color:#fff;
-						color: #333;
+						color: $word-color;
 						text-decoration: underline;
 					}
 				}
@@ -117,9 +124,18 @@ body {
 		}
 		
 		&:hover {
-			background-color:$dark-main-color;
+			z-index: 5;
+			.tag-item {
+				border:1px solid $border-color;
+				padding:4px 5px 4px 29px;
+				border-right:none;
+				z-index: 20;
+			}
 			.list-layer {
 				display: block;
+			}
+			a,.name {
+				color: $word-color;
 			}
 		}
 

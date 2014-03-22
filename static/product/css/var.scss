@@ -1,4 +1,12 @@
+// color
+
 $link:#2a6496;
-$main-color:#3498DB;
-$dark-main-color:darken($main-color,10%) !default;
-$ligth-main-color:lighten($main-color,10%) !default;
+
+// border
+$border-color:#ddd;
+$dark-word-color:darken($border-color,30%) !default;
+
+// word
+$word-color:#666;
+$dark-word-color:darken($word-color,30%) !default;
+$word-shadow:#eee;
