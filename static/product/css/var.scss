@@ -4,7 +4,8 @@ $link:#2a6496;
 
 // border
 $border-color:#ddd;
-$dark-word-color:darken($border-color,30%) !default;
+$light-border-color:lighten($border-color,10%) !default;
+$dark-border-color:darken($border-color,30%) !default;
 
 // word
 $word-color:#666;
