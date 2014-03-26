@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/form-builder.js"></script>
 	<script type="text/javascript" src="../js/frame.js"></script>
-
+	<script type="text/javascript" src="../js/builder.js"></script>
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -62,6 +62,10 @@
 	      }
 	      #source{
 	        min-height: 500px;
+	      }
+	      .btn-box {
+	      	padding: 30px;
+	      	text-align: center;
 	      }
 	</style>
 </head>
@@ -129,11 +133,17 @@
 						&lt;button class='btn btn-info'&gt;Save&lt;/button&gt;&lt;button class='btn btn-danger'&gt;Cancel&lt;/button&gt;
 					  &lt;/div&gt;
 					&lt;/form&gt;" data-original-title="Form Title">
-								<legend class="valtype" data-valtype="text">表单名</legend>
+								<legend id="DZ_formName" class="valtype" data-valtype="text">表单名</legend>
 							</div>
 						</fieldset>
 					</form>
 				</div>
+			</div>
+			<!-- 按钮 -->
+			<div class="clearfix btn-box">
+				<a href="" class="btn btn-primary btn-lg" id="DZ_formSave">
+					保存
+				</a>
 			</div>
 		</div>
 		<!-- 右侧 -->
@@ -247,7 +257,7 @@
 									</div>
 
 								</div>
-
+<!--
 								<div class="form-group component" rel="popover" title="Search Input" trigger="manual" data-content="
 					  &lt;form class='form'&gt;
 						&lt;div class='controls'&gt;
@@ -260,7 +270,6 @@
 						&lt;/div&gt;
 					  &lt;/form&gt;">
 
-									<!-- Prepended checkbox -->
 									<label class="col-md-3 control-label valtype" data-valtype="label">Prepended checkbox</label>
 									<div class="col-md-7 controls">
 										<div class="input-group">
@@ -273,7 +282,8 @@
 									</div>
 
 								</div>
-
+-->
+<!--
 								<div class="form-group component" rel="popover" title="Search Input" trigger="manual" data-content="
 					  &lt;form class='form'&gt;
 						&lt;div class='controls'&gt;
@@ -286,7 +296,6 @@
 						&lt;/div&gt;
 					  &lt;/form&gt;">
 
-									<!-- Appended checkbox -->
 									<label class="col-md-3 control-label valtype" data-valtype="label">Append checkbox</label>
 									<div class="col-md-7 controls">
 										<div class="input-group">
@@ -298,7 +307,7 @@
 										<p class="help-block valtype" data-valtype="help">Supporting help text</p>
 									</div>
 								</div>
-
+-->
 								<div class="form-group component" rel="popover" title="Search Input" trigger="manual" data-content="
 					  &lt;form class='form'&gt;
 						&lt;div class='controls'&gt;
@@ -418,7 +427,7 @@
 									</div>
 
 								</div>
-
+<!--
 								<div class="form-group component" rel="popover" title="Inline Checkboxes" trigger="manual" data-content="
 					  &lt;form class='form'&gt;
 						&lt;div class='controls'&gt;
@@ -430,7 +439,6 @@
 					  &lt;/form&gt;">
 									<label class="col-md-3 control-label valtype" data-valtype="label">Inline Checkboxes</label>
 
-									<!-- Multiple Checkboxes -->
 									<div class="controls valtype col-md-9" data-valtype="inline-checkboxes">
 										<label class="checkbox inline">
 											<input type="checkbox" value="1">1
@@ -444,8 +452,8 @@
 									</div>
 
 								</div>
-
-								<div class="form-group component" rel="popover" title="Inline radioes" trigger="manual" data-content="
+-->
+<!--								<div class="form-group component" rel="popover" title="Inline radioes" trigger="manual" data-content="
 					  &lt;form class='form'&gt;
 						&lt;div class='controls'&gt;
 						  &lt;label class=''&gt;Label Text&lt;/label&gt; &lt;input class='form-control' type='text' name='label' id='label'&gt;
@@ -458,7 +466,6 @@
 									<label class="col-md-3 control-label valtype" data-valtype="label">Inline radios</label>
 									<div class="controls valtype col-md-9" data-valtype="inline-radios">
 
-										<!-- Inline Radios -->
 										<label class="radio inline">
 											<input type="radio" value="1" checked="checked" name="group">1
 										</label>
@@ -470,7 +477,7 @@
 										</label>
 									</div>
 								</div>
-
+-->
 							</div>
 
 							<div class="tab-pane" id="4">
@@ -527,7 +534,7 @@
 				</form>
 			</div>
 		</div>
-
+		
 	</div>
 </body>
 
