@@ -17,7 +17,7 @@ $(function () {
 
 	$(document).delegate('#DZ_formSave','click',function (e) {
 		e.preventDefault();
-		var result = $.extend({},defaultData),
+		var result = $.extend(true,{},defaultData),
 			$formName = $('#DZ_formName'),
 			$target = $('#target'),
 			$inputs = $target.find('input[type=text]'),
@@ -29,9 +29,10 @@ $(function () {
 			radioId = 1,
 			checkboxId = 1;
 
+
 		result.formName = $formName.text();
+
 		// 开始循环
-		
 		// 输入框
 		$inputs.each(function () {
 			var input = $(this),
@@ -99,7 +100,7 @@ $(function () {
 		});
 
 		// select
-		$selects.each(function () {
+		$selects.each(function (index) {
 			var select = $(this),
 				name = $(this).attr('name'),
 				options = select.find('option'),
@@ -143,9 +144,6 @@ $(function () {
 				};
 			result.formData.textarea.push(data);
 		});
-
-		console.log(result);
-
 	})
 
 });
