@@ -1,6 +1,9 @@
 /**
  * 后台首页的样式
  */
+body {
+	background-color: #fff;
+}
 .class-wrap {
 	padding: 20px;
 }
