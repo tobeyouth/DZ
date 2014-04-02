@@ -25,7 +25,7 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'dz@yingcool',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('118.67.127.168'),
+			'ipFilters'=>array('61.148.202.10'),
 		),
 			'admin',
 		
@@ -36,6 +36,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'autoUpdateFlash'=>FALSE,	
 		),
 			
 		// uncomment the following to enable URLs in path-format

@@ -8,6 +8,7 @@
 	<title>表单页</title>
 	<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL;?>bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL;?>frame.css">
+	<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL;?>sub-index.css">
 	<!--<script type="text/javascript" src="<?php echo ADMIN_JS_URL?>jquery-2.1.0.js"></script>-->
 	<script type="text/javascript" src="<?php echo ADMIN_JS_URL?>bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo ADMIN_JS_URL?>frame.js"></script>

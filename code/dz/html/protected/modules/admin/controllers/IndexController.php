@@ -7,59 +7,37 @@
 	
 class IndexController extends Controller{
 	
-	public $layout='//layouts/admin';
+	public $layout='//layouts/admin_index';
 	
-	public function actionIndex(){
-            $model = new Brand;
-            //$arr = array('name'=>'张三');
-           //$model->attributes = $arr;
-            $model->name="瑞鸽";
-           if($model->save()){
-               echo "success";
-           }else{
-               echo "error";
-           }
-		$this->render('list',array('fu'=>'9999'));
+	public function actionIndex()
+	{
+		#商品总数
+    	$productCount = Product::model()->count('is_del=:is_del',array('is_del'=>0));
+    	$classifyModel = new ProductClassify();
+    	#类别总数
+    	$classifyCount = $classifyModel->count('is_del=:is_del and parent_id=:parent_id',array('is_del'=>0,'parent_id'=>0));
+    	$classifyArr = $classifyModel->findAll('is_del=:is_del and parent_id=:parent_id',array('is_del'=>0,'parent_id'=>0));
+    	if(isset($_POST["ProductClassify"])){
+    		$classifyModel->attributes = $_POST["ProductClassify"];
+    		$classifyModel->parent_id = 0;
+    		if($classifyModel->save(false)){
+    			header("Content-type: text/html; charset=utf-8");
+    			echo "<script>alert('添加成功');</script>";
+    			$this->redirect(array("/admin/index/index"));
+    		}else{
+    			header("Content-type: text/html; charset=utf-8");
+    			echo "<script>alert('添加失败，请重试');</script>";
+    			$this->redirect(array("/admin/index/index"));
+    		}
+    	}
+        $this->render('index',array(
+        	'productCount'=>$productCount,
+        	'classifyCount'=>$classifyCount,
+        	'classifyArr'=>$classifyArr,
+        	'classifyModel'=>$classifyModel			
+        ));
 	}
-	
-	public function actionList(){
-		$this->render('list');
-	}
-	
-	public function actionAdd(){
-		$product_model = Product::model();
-		$this->render('form',array('model'=>$product_model));
-	}
-	
-	public function actionJsq(){
-		$this->render('jsq');
-	}
-        
-        public function actionTest(){
-            //$model = new ProductClassify;
-            $model = new ParamName;
-            
-//            $class_arr = array('camera'=>'摄影机','ydsj'=>'移动升降','dingguang'=>'灯光','syjpj'=>'摄影机配件');
-//            foreach ($class_arr as $k=>$v){
-//                $model->id=0;
-//                $model->name = $v;
-//                $model->eg_name = $k;
-//                if($model->save()){
-//                    echo "success","<br>";
-//                }else{
-//                    echo "error","<br>";
-//                }
-//                $model->isNewRecord = true;
-//            }
-            $model->name="屏幕尺寸";
-            $model->classify_id = 5;
-            $model->unit="英寸";
-            if($model->save()){
-                echo "success";
-            }else{
-                echo "error";
-            }
-        }
+		
 
 }
 ?>

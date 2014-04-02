@@ -1,5 +1,7 @@
 <?php
 error_reporting(E_ALL & ~ E_NOTICE);
+//error_reporting(E_ALL);
+
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
@@ -11,6 +13,8 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 
 //var_dump($_SERVER['REMOTE_ADDR']);
+//exit;
+////exit;
 include_once './protected/config/constant.php';
 require_once($yii);
 Yii::createWebApplication($config)->run();

@@ -13,7 +13,7 @@
  */
 class ProductClassify extends CActiveRecord
 {
-        public $sub_id,$sub_sub_id;
+        public $sub_id, $sub_sub_id, $nav=array();
         
 	/**
 	 * @return string the associated database table name
@@ -125,5 +125,31 @@ class ProductClassify extends CActiveRecord
                  //$returnArr[$k]['eg_name'] = $v->eg_name;
              }
              return $returnArr;  
+        }
+        
+        /**
+         * 
+         */
+        public function getNav($parent_id)
+        {
+            $condition['select'] = 'id,name,parent_id';
+            if ($parent_id) {
+                $condition['condition'] = 'id='.$parent_id;
+            }
+            $tem_res = $this->find($condition);
+            $tem_nav['id'] = $tem_res->id;
+            $tem_nav['name'] = $tem_res->name;
+            $tem_nav['parent_id'] = $tem_res->parent_id;
+            $tem_nav['url'] = Yii::app()->createUrl('admin/productClassify/index', array('parent_id'=>$tem_res->id));
+            $this->nav[] = $tem_nav;
+            if ($tem_nav['parent_id']) {
+                $nav = $this->getNav($tem_nav['parent_id']);
+            } else {
+                $nav = $this->nav;
+                $this->nav = array();
+                unset($nav[0]['url']);
+                $nav = array_reverse($nav);
+            }
+            return $nav;
         }
 }

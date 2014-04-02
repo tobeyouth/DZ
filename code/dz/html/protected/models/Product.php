@@ -117,4 +117,6 @@ class Product extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	
 }
