@@ -71,9 +71,27 @@ class ProductClassifyController extends Controller
     	if(0!=$productClassifyModel->parent_id) {
     		$parentArr = $productClassifyModel->findByAttributes(array('id'=>$productClassifyModel->parent_id));
     	}
+    	$subList = $productClassifyModel->findAll("parent_id=:parent_id and is_del=:is_del",array('is_del'=>0,'parent_id'=>(int)$id));
+    	if(isset($_POST['ProductClassify'])){
+    		$productClassifyModel->setIsNewRecord(true);
+    		$productClassifyModel->id=0;
+    		$productClassifyModel->attributes = $_POST['ProductClassify'];
+    		$productClassifyModel->parent_id = $id;
+    		if($productClassifyModel->save(false)){
+    			header("Content-type: text/html; charset=utf-8");
+    			echo "<script>alert('添加成功');</script>";
+    			$this->redirect(Yii::app()->createUrl('/admin/ProductClassify/addClass',array('id'=>$id)));
+    		}else{
+    			header("Content-type: text/html; charset=utf-8");
+    			echo "<script>alert('添加失败，请重试');</script>";
+    			$this->redirect(Yii::app()->createUrl('/admin/ProductClassify/addClass',array('id'=>$id)));
+    		}
+    		
+    	}
     	$this->render('addClass',array(
     		'model'=>$productClassifyModel,
-    		'parentArr'=>$parentArr	
+    		'parentArr'=>$parentArr,
+    		'subList'=>$subList,		
     	));
     	
     }
