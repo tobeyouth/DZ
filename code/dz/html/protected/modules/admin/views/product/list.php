@@ -18,7 +18,7 @@
                                                         <th class="col-md-2">价格</th>
 							<th class="col-md-2">类别</th>
 							<th class="col-md-1">修改</th>
-							<th class="col-md-1">删除</th>
+<!--							<th class="col-md-1">删除</th>-->
 						</tr>
 					</thead>
                                         <tbody>
@@ -34,8 +34,19 @@
                                                 <td><?php echo CHtml::encode($v->price);?></td>
                                                 
                                                 <td><?php echo CHtml::encode($v->classify->name)?></td>
-							<td><a href="" class="btn btn btn-primary">修改</a></td>
-							<td><a href="" class="btn btn-danger">删除</a></td>
+                                               <td>
+<!--                                                   <a href="" class="btn btn btn-primary">修改</a>-->
+                                                    <?php
+                                                        echo CHtml::link('修改',  
+                                                                Yii::app()->createUrl('/admin/product/jsq',array('id'=>$v->id)),
+                                                                array(
+                                                                    'class'=>'btn btn btn-primary',
+                                                                    'target'=>'_blank'
+                                                                    )
+                                                                );
+                                                    ?>
+                                               </td>
+<!--							<td><a href="" class="btn btn-danger">删除</a></td>-->
                                                         
 						</tr>
                                         <?php

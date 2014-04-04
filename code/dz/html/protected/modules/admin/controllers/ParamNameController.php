@@ -1,43 +1,15 @@
 <?php
-
 /*
  * @todo 参数名
  * @author songliang
  * @since 2014-03-09
  */
-
 class ParamNameController extends Controller
 {
-    public $layout='//layouts/admin';
+    public $layout='//layouts/else_admin';
     public function actionTest()
     {
-         $model = new ParamName;
-         $name_arr = array(
-//             array('产品信息',5,0,''),
-//             array('视频输入',5,0,''),
-//             array('视频输出',5,0,''),
-//             array('屏幕尺寸',5,1,'英寸'),
-//             array('像素',5,1,''),
-//             array('点距',5,1,'mm'),
-//             array('显示比例',5,1,''),
-//             array('亮度',5,1,'cd/㎡'),
-//             array('对比度',5,1,''),
-//             array('反应速度',5,1,'ms'),
-//             array('可视视角',5,1,''),
-//             array('电源电压',5,1,'v'),
-//             array('功率消耗',5,1,'w'),
-//             array('外观尺寸',5,1,'mm'),
-//             array('重量',5,1,'v'),
-//             array('复合视频',5,2,''),
-//             array('分量（Y/Pb/Pr）',5,3,''),
-//             array('HD/SD-SDI',5,3,''),
-//             array('HDMI',5,3,''),
-//             array('音频监听',5,3,''),
-//             array('音频输入',5,3,''),
-//             array('SDI 嵌入音频',5,3,''),
-//             array('VF总线输入',5,2,''),
-//             array('TALLY显示',5,3,''),
-         );
+        //$model = new ParamName;
 //         foreach($name_arr as $key=>$val){
 //             $model->id = 0;
 //             $model->name = $val[0];
@@ -51,6 +23,146 @@ class ParamNameController extends Controller
 //             }
 //             $model->isNewRecord = true;
 //         }
+        
+//         $param_value_model = new ParamValue(5);
+//         $param_value_model->pro_id = 100;
+//         $param_value_model->param_8 = 3;
+//         $param_value_model-> setIsNewRecord(true);
+//
+//         if($param_value_model->save()) {
+//             echo 'ok';
+//         }else {
+//             echo 'fuck';
+//         }
+//         var_dump($param_value_model->findAll(array( 'limit'=>5)));
+//         $sql = "INSERT INTO dz_param_value_5(pro_id,param_7) VALUES(111,555)";
+//        $result = yii::app()->db->createCommand($sql);
+//        $query = $result->query(); 
+       // echo 'ok';
+//        $update = $param_value_model->findByPk (array (
+//                        'pro_id' => 100, 
+//                        'param_8' => 3
+//                ));
+//        $update->param_10 = 5;
+//        if ( $update->update ()) {
+//            echo 'ok';
+//        } else {
+//            echo 'fuck';
+//        }
+         $sql = 'CREATE TABLE IF NOT EXISTS `dz_param_value_6` (
+             `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+             `pro_id` int(10) unsigned NOT NULL,
+              PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB CHARSET=utf8';
+        $connect = yii::app()->db->createCommand($sql);
+        if ($connect->query()) {
+             echo 'ok';
+         }
+         echo 'end';
+    }
+    
+    /**
+     * 
+     */
+    public function actionAdd()
+    {
+        $classify_id = intval($_GET['classify_id']);
+        if (!$classify_id) {
+        	die;
+        }
+        $this->render('add',array(
+                'classify_id'=>$classify_id,
+            ));
+    }
+    
+    /**
+     * 
+     */
+    public function actionAjax()
+    {
+        $arr = explode('@', $_POST['json']);
+        $param_name_model = new ParamName;
+        $param_option_arr = array();
+        
+        if ($arr) {
+            foreach ($arr as $key=>$val) {
+                if (!$key) {
+                    $tem = explode('&', $val);
+                    //$name = explode('=', $val);
+                    $classify_id = $tem[1];
+                    //$param_name = $name[1];
+                } else {
+                    $tem = explode(':', $val);
+                    $type = $tem[0];
+                    
+                    if (strpos($tem[1],';')) {
+                        $info = explode(';', $tem[1]);
+                    } else {
+                        $info[0] = $tem[1];
+                    }
+					
+                    foreach ($info as $content) {
+                        $content_arr = explode('&', $content);
+                        foreach ($content_arr as $unit) {
+                            $unit_arr = explode('=', $unit);
+                            switch ($unit_arr[0]) {
+                                case 'label':
+                                	//$param_name_model->id = 0;
+                                    $param_name_model->name = $unit_arr[1];
+                                    $param_name_model->classify_id = $classify_id;
+                                    $param_name_model->search_option = $type != 'text' && $type != 'textarea' ? 1 : 0;
+                                    $param_name_model->form_option = $type;
+                                    $param_name_model->save();
+                                    $param_id = $param_name_model->attributes['id'];
+                                    ++$param_name_model->id;
+                                    break;
+                                case 'options':
+                                	if ('radios' == $type || 'checkbox' == $type || 'select' == $type) {
+                                		$param_option_arr[$param_id] = $unit_arr[1];
+                                	}
+                                    break;
+                                default:
+                                    break;
+                            }
+                            $param_name_model->isNewRecord = true;
+                        }
+                    }
+                }
+            }
+
+            $param_value_column = '';
+            foreach ($param_option_arr as $param_id_k=>$param_val) {
+	            if (strpos($param_val, ',')) {
+	            	$param_val_arr = explode(',', $param_val);
+	            } else {
+	            	$param_val_arr[0] = $param_val;
+	            }
+	            
+	            foreach ($param_val_arr as $p_v) {
+		            /* $param_value_option_model->id = 0;
+		            $param_value_option_model->value = $p_v;
+		            $param_value_option_model->param_name_id = $param_id_k;
+		            
+		            $param_value_option_model->save();
+		            $param_value_option_model->isNewRecord = true; */
+		            $sql = 'INSERT INTO dz_param_option_value(value,param_name_id) VALUES("'.$p_v.'",'.$param_id_k.')';
+		            $connect = yii::app()->db->createCommand($sql);
+		            $connect->query();
+	            }
+            	$param_value_column .= '`param_'.$param_id_k.'` varchar(255) CHARACTER SET utf8 DEFAULT NULL,';
+            }
+
+            $insert_sql = 'CREATE TABLE IF NOT EXISTS `dz_param_value_'.$classify_id.'` (
+            		`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+            		`pro_id` int(10) unsigned NOT NULL,
+            		'.$param_value_column.'
+            		PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB CHARSET=utf8';
+            $connect = yii::app()->db->createCommand($insert_sql);
+            if ($connect->query()) {
+            	echo 'ok';
+            }
+        }
     }
 }
 
