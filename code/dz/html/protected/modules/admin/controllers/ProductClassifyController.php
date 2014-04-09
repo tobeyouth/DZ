@@ -96,6 +96,20 @@ class ProductClassifyController extends Controller
     	
     }
     
+    public function actionDeleteClassify()
+    {
+    	if (Yii::app()->request->isAjaxRequest) {
+    		$id = (int)Yii::app()->request->getPost('id');
+    		$model = ProductClassify::model();
+    		$flag = $model->updateAll(array('is_del'=>1),'id=:id or parent_id=:parent_id',array('id'=>$id,'parent_id'=>$id));
+    		if ($flag) {
+    			echo json_encode(array('code'=>1,'msg'=>'删除成功'));
+    		} else {
+    			echo json_encode(array('code'=>0,'msg'=>'删除失败'));
+    		}
+    	} 
+    }
+    
     public function loadModel($id)
     {
     	$model = ProductClassify::model()->findByPk($id);
@@ -103,6 +117,11 @@ class ProductClassifyController extends Controller
     		throw new CHttpException('404',' 您请求的页面不存在!');
     	}
     	return $model;
+    }
+    
+    public function  actionTest(){
+    	$this->render('test');
+    	
     }
     
 }
