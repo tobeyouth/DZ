@@ -83,8 +83,10 @@ class ParamNameController extends Controller
         $arr = explode('@', $_POST['json']);
         $param_name_model = new ParamName;
         $param_option_arr = array();
+        $param_value_column_arr = array();
         
         if ($arr) {
+        	$param_value_column = '';
             foreach ($arr as $key=>$val) {
                 if (!$key) {
                     $tem = explode('&', $val);
@@ -94,6 +96,10 @@ class ParamNameController extends Controller
                 } else {
                     $tem = explode(':', $val);
                     $type = $tem[0];
+                    
+                    if (!$tem[1]) {
+                    	continue;
+                    }
                     
                     if (strpos($tem[1],';')) {
                         $info = explode(';', $tem[1]);
@@ -114,6 +120,7 @@ class ParamNameController extends Controller
                                     $param_name_model->form_option = $type;
                                     $param_name_model->save();
                                     $param_id = $param_name_model->attributes['id'];
+                                    $param_value_column_arr[$param_id] = $param_id;
                                     ++$param_name_model->id;
                                     break;
                                 case 'options':
@@ -127,10 +134,10 @@ class ParamNameController extends Controller
                             $param_name_model->isNewRecord = true;
                         }
                     }
+                    unset($info);
                 }
             }
-
-            $param_value_column = '';
+            
             foreach ($param_option_arr as $param_id_k=>$param_val) {
 	            if (strpos($param_val, ',')) {
 	            	$param_val_arr = explode(',', $param_val);
@@ -149,9 +156,12 @@ class ParamNameController extends Controller
 		            $connect = yii::app()->db->createCommand($sql);
 		            $connect->query();
 	            }
-            	$param_value_column .= '`param_'.$param_id_k.'` varchar(255) CHARACTER SET utf8 DEFAULT NULL,';
             }
-
+			
+            foreach ($param_value_column_arr as $param_value_column_id) {
+            	$param_value_column .= '`param_'.$param_value_column_id.'` varchar(255) CHARACTER SET utf8 DEFAULT NULL,';
+            }
+            
             $insert_sql = 'CREATE TABLE IF NOT EXISTS `dz_param_value_'.$classify_id.'` (
             		`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
             		`pro_id` int(10) unsigned NOT NULL,
@@ -160,7 +170,7 @@ class ParamNameController extends Controller
             ) ENGINE=InnoDB CHARSET=utf8';
             $connect = yii::app()->db->createCommand($insert_sql);
             if ($connect->query()) {
-            	echo 'ok';
+            	echo $classify_id;
             }
         }
     }
