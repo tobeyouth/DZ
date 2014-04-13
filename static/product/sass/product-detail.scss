@@ -1,0 +1,51 @@
+// product detail page
+@import "header.scss";
+@import "product-intro.scss";
+@import "element.scss";
+
+.detail-intro {
+	// border:1px solid $border-color;
+	padding:0px 15px 10px 15px;;
+	.hd {
+		padding:10px 15px;
+		line-height: 17px;
+		font-size: 16px;
+		border-bottom:3px solid #333;
+	}
+	.bd {
+		padding:15px 0px;
+	}
+}
+.detail-text {
+	.bd {
+		padding:15px;
+		line-height: 20px;
+		color: $word-color;
+	}
+}
+.param-table {
+	.bd {
+		padding:15px 0px;
+	}
+}
+.panel {
+	@extend %panel;
+}
+
+.tag-panel {
+	margin-bottom:20px;
+	.panel-body {
+		padding:15px 0px;
+	}
+	.tag {
+		display: inline-block;
+		padding: 0px 10px;
+		line-height: 24px;
+		border:1px solid $light-border-color;
+
+		&:hover {
+			text-decoration: none;
+			border:1px solid $border-color;
+		}
+	}
+}

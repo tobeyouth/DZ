@@ -1,4 +1,10 @@
 @import "var.scss";
+.mt10 {
+	margin-top:10px;
+}
+.mt30 {
+	margin-top:30px;
+}
 
 %content {
 	background-color:#fff;
@@ -207,6 +213,21 @@ a {
 		}
 		.bd {
 			display: block;
+		}
+	}
+}
+
+%panel {
+	margin-bottom:0px;
+	box-shadow:none;
+	border:none;
+	.panel-heading {
+		padding-left:5px;
+		background-color:#fff;
+		border-bottom:3px solid #333;
+		.glyphicon {
+			margin-right: 15px;
+			font-size: 19px;
 		}
 	}
 }
