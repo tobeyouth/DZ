@@ -34,7 +34,7 @@ class ParamName extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			array('classify_id', 'length', 'max'=>10),
 			array('unit', 'length', 'max'=>20),
-                        array('parent_id', 'length', 'max'=>10),
+            array('parent_id', 'length', 'max'=>10),
 			array('sort', 'length', 'max'=>3),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -110,4 +110,12 @@ class ParamName extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        public function createParamValueTable($class_id, $columns)
+        {
+            if (!empty($columns) && is_array($columns) ) {
+                self::model()->createTable('dz_param_value_'.$class_id, $columns, 'CHARSET=utf8');
+            }
+            
+        }
 }
