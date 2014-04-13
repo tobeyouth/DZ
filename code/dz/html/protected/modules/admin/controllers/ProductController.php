@@ -53,10 +53,58 @@ class ProductController extends CController{
         
     }
     
-    public function actionJsq(){
-        $param_name_model = new ParamName;
-        $param_name_arr = $param_name_model->findAll('classify_id=5 and is_del=0');
-        print_r($param_name_arr);
-        $this->render('jsq');
+    public function actionJsq($id){
+        $proModel = $this->loadModel($id);
+        $classId = $proModel->classify_id;
+        $cmd = Yii::app()->db->createCommand();
+        $cmd->select("*");
+        $cmd->from('dz_param_name');
+        $cmd->where('classify_id=:classify_id',array(':classify_id'=>$classId));
+        $paramArr = $cmd->queryAll();
+        $paramValModel = new ParamValue5();
+        $paramArr = $this->getMenuTree($paramArr);
+        if(isset($_POST['ParamValue5'])){
+            $paramValModel->attributes = $_POST['ParamValue5'];
+            $paramValModel->pro_id = (int)$_POST['Product']['id'];
+            if($paramValModel->save()){
+                echo "success";
+            }else{
+                echo "error";
+            }
+        }
+        $this->render('jsq',
+                    array(
+                        'proModel'=>$proModel,
+                        'paramValModel'=>$paramValModel,
+                        'paramArr'=>$paramArr
+                        )
+                );
+    }
+    
+    /**
+     * 处理数组
+     * @param array $data
+     * @return type
+     */
+    function getMenuTree(array $data)
+    {
+        $tree = array();
+        foreach($data as &$item) {
+            if($item['parent_id'] == 0) {
+                $tree[ $item['id'] ] = $item; 
+            } else if( isset($data[ $item['parent_id'] ]) ) {
+                $tree[ $item['parent_id'] ]['child'][] = $item;
+            }
+        }
+        return $tree;
+    }
+    
+    
+    public function loadModel($id){
+        $model = Product::model()->findByPk($id);
+        if('null'===$model){
+            throw new CHttpException('404',' 您请求的页面不存在!');
+        }
+        return $model;
     }
 }

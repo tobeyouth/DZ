@@ -1,0 +1,11 @@
+/*子类首页*/
+.table-list .class-tabel th ,.table-list .class-tabel td {
+	vertical-align: middle;
+}
+.table-list .class-tabel td:last-child {
+	text-align: right;
+}
+.add-wrap {
+	margin: 0px 0px 50px 0px;
+}
+.check-type {margin: 10px 0px;text-align: right;}
