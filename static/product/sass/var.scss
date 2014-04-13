@@ -1,6 +1,7 @@
 // color
 
 $link:#2a6496;
+$light-link:lighten($link,10%) !default;
 
 // border
 $border-color:#ddd;
@@ -10,6 +11,7 @@ $dark-border-color:darken($border-color,30%) !default;
 // word
 $word-color:#666;
 $dark-word-color:darken($word-color,30%) !default;
+$ligth-word-color:lighten($word-color,30%) !default;
 $word-shadow:#eee;
 
 // background

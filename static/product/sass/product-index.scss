@@ -2,18 +2,7 @@
 @import "product-list.scss";
 
 .panel {
-	margin-bottom:0px;
-	box-shadow:none;
-	border:none;
-	.panel-heading {
-		padding-left:5px;
-		background-color:#fff;
-		border-bottom:3px solid #333;
-		.glyphicon {
-			margin-right: 15px;
-			font-size: 19px;
-		}
-	}
+	@extend %panel;
 }
 
 
