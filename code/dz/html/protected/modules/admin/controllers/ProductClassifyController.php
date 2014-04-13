@@ -73,6 +73,12 @@ class ProductClassifyController extends Controller
     	}
     	$subList = $productClassifyModel->findAll("parent_id=:parent_id and is_del=:is_del",array('is_del'=>0,'parent_id'=>(int)$id));
     	if(isset($_POST['ProductClassify'])){
+    		if('' == $_POST['ProductClassify']['name']){
+    			header("Content-type: text/html; charset=utf-8");
+    			echo "<script>alert('类别名称不能为空');</script>";
+    			$this->redirect(Yii::app()->createUrl('/admin/ProductClassify/addClass',array('id'=>$id)));
+    			exit;
+    		}
     		$productClassifyModel->setIsNewRecord(true);
     		$productClassifyModel->id=0;
     		$productClassifyModel->attributes = $_POST['ProductClassify'];
@@ -88,10 +94,17 @@ class ProductClassifyController extends Controller
     		}
     		
     	}
+    	//form-builder的url
+    	$param_name_model = new ParamName;
+    	$sql = 'SELECT id FROM dz_param_name WHERE classify_id='.$id.' LIMIT 1';
+    	$res = $param_name_model->findBySql ($sql);
+    	$form_builder_url = !$res['id'] ? Yii::app()->createUrl('admin/paramName/add', array('classify_id'=>$id)) : '';
+
     	$this->render('addClass',array(
     		'model'=>$productClassifyModel,
     		'parentArr'=>$parentArr,
-    		'subList'=>$subList,		
+    		'subList'=>$subList,
+    		'form_builder_url'=>$form_builder_url
     	));
     	
     }
@@ -117,6 +130,21 @@ class ProductClassifyController extends Controller
     		throw new CHttpException('404',' 您请求的页面不存在!');
     	}
     	return $model;
+    }
+    
+    public function actionUpdateClassifyName()
+    {
+    	if (Yii::app()->request->isAjaxRequest) {
+    		$name = Yii::app()->request->getPost('name');
+    		$id = Yii::app()->request->getPost('id');
+    		$model = $this->loadModel($id);
+    		if($model->updateByPk($id,array('name'=>$name))){
+    			echo CJSON::encode(array('code'=>1,'msg'=>'修改成功'));
+    		}else{
+    			echo CJSON::encode(array('code'=>0,'msg'=>'修改失败,请重试'));
+    		}
+    		
+    	}
     }
     
     public function  actionTest(){
