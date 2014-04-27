@@ -138,20 +138,33 @@
 	}
 	.panel-body {
 		padding:0px;
+		.recommend-content {
+			display: none;
+		}
+		.active {
+			display: block
+		}
 	}
 }
 .recommend-list {
 	list-style: none;
-	height:40px;
-	line-height:40px;
+	overflow: hidden;
+	margin:3px 0px -3px 0px;
 	li {
-		padding:0px 40px;		
+		height:40px;
 		float: left;
 		cursor: pointer;
-
-		&:hover {
+		a {
+			height:40px;
+			line-height:40px;
+			display: block;
+			padding:0px 40px;
+		}
+		a:hover ,&.active a {
+			border:none;
 			border-bottom:3px solid #999;
 			margin-bottom: -3px;
+			text-decoration: none;
 		}
 	}
 }
