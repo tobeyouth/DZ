@@ -8,6 +8,7 @@
 echo $this->renderPartial('_form',array(
                 'product_model'=>$product_model,
                 'classify_model'=>$classify_model,
-                'classify_arr'=>$classify_arr
+                'classify_arr'=>$classify_arr,
+				'parentArr'=>$parentArr,
         
 ));
