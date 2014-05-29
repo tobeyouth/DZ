@@ -1,0 +1,5 @@
+runtime/
+assets/
+.idea/
+config/main.php
+.DS_Store
