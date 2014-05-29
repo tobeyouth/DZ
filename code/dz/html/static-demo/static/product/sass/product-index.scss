@@ -1,0 +1,286 @@
+@import "header.scss";
+@import "product-list.scss";
+
+.panel {
+	@extend %panel;
+}
+
+
+.tab-slide {
+	width:100%;
+	height:340px;
+	overflow:hidden;
+	z-index:1;
+	.item {
+		height: 340px;
+		overflow: hidden;
+	}
+	.carousel-indicators {
+		right: 0px;
+		width: 100px;
+		left: auto;
+		bottom:10px;
+		margin: 0px;
+	}
+	.carousel-caption {
+		position: absolute;
+		z-index: 1;
+		left:0px;
+		bottom:0px;
+		width:100%;
+		background-color:#333;
+		background-color:rgba(0,0,0,0.8);
+		margin:0px;
+		padding:0px;
+		p {
+			padding:10px;
+			margin: 0px;
+			line-height: 24px;
+			font-size: 14px;
+			color: #fff;
+		}
+	}
+}
+
+// publish-list
+.publish-list {
+ 	padding-bottom:21px;
+ 	list-style: none;
+ 	li {
+ 		line-height: 24px;
+ 	}
+ }
+
+// probation-list
+.probation-list {
+ 	clear: both;
+ 	overflow: hidden;
+ 	zoom:1;
+ 	list-style: none;
+	padding:21px 25px;
+	width:600px;
+
+ 	li {
+		float:left;
+		margin:0px 33px 0px 0px;
+		a {
+			display: block;
+			width: 240px;
+			height: 180px;
+			@extend %relative;
+			overflow: hidden;
+
+			img {
+				display: block;
+			}
+
+			.intro {
+				position: absolute;
+				left:0px;
+				bottom: -100%;
+				width: 100%;
+				padding:10px 0px;
+				background-color:rgba(0,0,0,0.5);
+				color: #fff;
+				@include transition();
+
+				p {
+					line-height: 20px;
+					text-align: center;
+					padding-bottom:0px;
+					margin-bottom: 0px;
+				}
+			}
+
+			&:hover .intro {
+				bottom:0px;
+			}
+		}
+	}
+ }
+
+ .news-list {
+ 	list-style: none;
+	margin-bottom:0px;
+
+ 	li {
+ 		line-height: 24px;
+ 	}
+ }
+
+ .product-content {
+ 	float: left;
+ 	width: 220px;
+
+ 	.panel-body {
+ 		border-right:1px solid $light-border-color;
+ 	}
+	.type-list {
+		line-height: 30px;
+		a {
+	 		display: inline-block;
+	 		padding:0px 5px;
+	 		color: $word-color;
+
+	 		&:hover {
+				text-shadow: 0px 0px 4px $word-shadow;
+	 		}
+	 	}
+	}
+ }
+
+.product-recommend {
+	margin-left:219px;
+	margin-right:200px;
+	border-left:1px solid $light-border-color;
+	.panel-heading {
+		padding:0px;
+	}
+	.panel-body {
+		padding:0px;
+		.recommend-content {
+			display: none;
+		}
+		.active {
+			display: block
+		}
+	}
+}
+.recommend-list {
+	list-style: none;
+	overflow: hidden;
+	margin:3px 0px -3px 0px;
+	li {
+		height:40px;
+		float: left;
+		cursor: pointer;
+		a {
+			height:40px;
+			line-height:40px;
+			display: block;
+			padding:0px 40px;
+		}
+		a:hover ,&.active a {
+			border:none;
+			border-bottom:3px solid #999;
+			margin-bottom: -3px;
+			text-decoration: none;
+		}
+	}
+}
+
+.recommend-content {
+	display:none;
+	
+	.small-list {
+		overflow: hidden;
+		li {
+			float: left;
+			border-right:1px solid $light-border-color;
+			border-bottom:1px solid $light-border-color;
+			height: 150px;
+			width: 130px;
+			padding:10px;
+			text-align: center;
+			
+			&:hover {
+				box-shadow:0px 0px 4px #eee;
+			}
+	
+			img {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.intro {
+				line-height: 20px;
+				a {
+					color: $word-color;
+				}
+			}
+		}
+	}
+
+	.large-list {
+		overflow: hidden;
+		li {
+			width: 260px;
+			height: 102px;
+			float: left;
+			border-right:1px solid $light-border-color;
+			border-bottom:1px solid $light-border-color;
+			&:hover {
+				box-shadow:0px 0px 4px #eee;
+			}
+		}
+		.img-link {
+			float: left;
+			width: 100px;
+			height: 100px;
+			img {
+				display: block;
+			}
+		}
+		
+		.intro {
+			margin:20px 0px 0px 110px;
+			overflow: hidden;
+			a {
+				color: $word-color;
+			}
+		}
+		
+	}
+}
+
+.product-side {
+	.panel-heading {
+		text-align: right;
+		padding:8px 15px 8px 15px;
+		.more-link {
+			display: inline-block;
+			padding:0px 5px;
+			font-size: 12px;
+			height: 24px;
+			line-height: 24px;
+			background-color:#eee;
+			border-radius:4px;
+		}
+	}
+	.panel-body {
+		padding:0px;
+	}
+	float:right;
+	width:200px;
+	.top-list {
+		padding:10px;
+		li {
+			padding:5px 10px 5px 5px;
+			line-height: 20px;
+
+			em {
+				font-style: normal;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				line-height: 18px;
+				margin-right: 10px;
+				text-align: center;
+				color: #999;
+				border:1px solid #999;
+				border-radius:10px;
+			}
+			
+			a {
+				color: $word-color;
+			}
+		}
+		.hot em {
+			color: #f00;
+			border:1px solid #f00;
+		}
+	}
+}
+
+
+

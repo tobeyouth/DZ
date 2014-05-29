@@ -72,13 +72,8 @@ class ProductClassifyController extends Controller
     		$parentArr = $productClassifyModel->findByAttributes(array('id'=>$productClassifyModel->parent_id));
     	}
     	$subList = $productClassifyModel->findAll("parent_id=:parent_id and is_del=:is_del",array('is_del'=>0,'parent_id'=>(int)$id));
+
     	if(isset($_POST['ProductClassify'])){
-    		if('' == $_POST['ProductClassify']['name']){
-    			header("Content-type: text/html; charset=utf-8");
-    			echo "<script>alert('类别名称不能为空');</script>";
-    			$this->redirect(Yii::app()->createUrl('/admin/ProductClassify/addClass',array('id'=>$id)));
-    			exit;
-    		}
     		$productClassifyModel->setIsNewRecord(true);
     		$productClassifyModel->id=0;
     		$productClassifyModel->attributes = $_POST['ProductClassify'];
@@ -94,11 +89,12 @@ class ProductClassifyController extends Controller
     		}
     		
     	}
+    	
     	//form-builder的url
-    	$param_name_model = new ParamName;
+    	/* $param_name_model = new ParamName;
     	$sql = 'SELECT id FROM dz_param_name WHERE classify_id='.$id.' LIMIT 1';
-    	$res = $param_name_model->findBySql ($sql);
-    	$form_builder_url = !$res['id'] ? Yii::app()->createUrl('admin/paramName/add', array('classify_id'=>$id)) : '';
+    	$res = $param_name_model->findBySql ($sql); */
+    	$form_builder_url = $productClassifyModel->parent_id ? Yii::app()->createUrl('admin/paramName/add', array('parent_id'=>$id)) : '';
 
     	$this->render('addClass',array(
     		'model'=>$productClassifyModel,

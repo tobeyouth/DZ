@@ -71,7 +71,8 @@ class Product extends CActiveRecord
 			'price' => '价格',
 			'update_time' => 'Update Time',
 			'is_del' => 'Is Del',
-                        'color'=>'产品颜色'
+            'color' => '产品颜色',
+			'picture' => '图片'
 		);
 	}
 

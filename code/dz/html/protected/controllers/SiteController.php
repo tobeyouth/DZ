@@ -37,6 +37,7 @@ class SiteController extends Controller
 	 */
 	public function actionError()
 	{
+		$this->layout='//layouts/admin';
 		if($error=Yii::app()->errorHandler->error)
 		{
 			if(Yii::app()->request->isAjaxRequest)
@@ -77,6 +78,7 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
+		$this->layout='//layouts/admin';
 		$model=new LoginForm;
 
 		// if it is ajax validation request

@@ -418,4 +418,4 @@
         </div>
 
 </div>
-<input type="hidden" id="classify_id" name="classify_id" value="<?=$classify_id?>">
+<input type="hidden" id="parent_id" name="parent_id" value="<?=$parent_id?>">

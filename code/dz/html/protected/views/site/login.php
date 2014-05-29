@@ -1,53 +1,29 @@
 <?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
-
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
+$this->pageTitle = Yii::app()->name . ' - Login';
 ?>
+<div class="form " style="padding-top: 100px;">
+    <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+        'id' => 'login-form',
+        'inlineErrors'=>false,
+        'enableClientValidation' => true,
+        'clientOptions' => array(
+            'validateOnSubmit' => true,
+        ),
+        'htmlOptions' => array('class' => 'form-signin')
+    )); ?>
+    <h2 class="form-signin-heading">请登录</h2>
+    <?php echo $form->textFieldRow($model, 'username', array('class' => 'input-block-level',
+        'placeholder' => '用户名')); ?>
+    <?php echo $form->passwordFieldRow($model, 'password', array('class' => 'input-block-level',
+        'placeholder' => '密码')); ?>
+    <?php // echo $form->textFieldRow($model,'verificationCode',array('class'=>'input-small'));?>
+    <br>
+    <?php
+    //$this->widget('CCaptcha',array('showRefreshButton'=>true,'clickableImage'=>true,'imageOptions'=>array('alt'=>'点击切换验证码'),
+      //  'buttonLabel'=>'点击切换验证码'));
+    ?>
+    <br>
+    <?php echo CHtml::submitButton('登 录', array('class' => 'btn btn-large btn-primary')); ?>
 
-<h1>Login</h1>
-
-<p>Please fill out the following form with your login credentials:</p>
-
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'login-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
-		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
-		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
-
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+    <?php $this->endWidget(); ?>
+</div>

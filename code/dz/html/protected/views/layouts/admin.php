@@ -25,21 +25,21 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">DZ产品管理后台</a>
+				<a class="navbar-brand" href="<?php echo "http://yingcool.me/"?>">DZ产品管理后台</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">首页</a>
+					<li class="active"><a href="<?php echo "http://yingcool.me/"?>">首页</a>
 					</li>
-					<li class="dropdown">
-						<a href="#about" class="dropdown-toggle" data-toggle="dropdown">选择产品类别<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">摄影</a></li>
-							<li><a href="#">录音</a></li>
-							<li><a href="#">美术</a></li>
-							<li><a href="#">道具</a></li>
-						</ul>
-					</li>
+<!-- 					<li class="dropdown"> -->
+<!-- 						<a href="#about" class="dropdown-toggle" data-toggle="dropdown">选择产品类别<b class="caret"></b></a> -->
+<!-- 						<ul class="dropdown-menu"> -->
+<!-- 							<li><a href="#">摄影</a></li> -->
+<!-- 							<li><a href="#">录音</a></li> -->
+<!-- 							<li><a href="#">美术</a></li> -->
+<!-- 							<li><a href="#">道具</a></li> -->
+<!-- 						</ul> -->
+<!-- 					</li> -->
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
@@ -58,7 +58,7 @@
 		<!-- 左侧列表 -->
 		<div class="col-xs-2 col-md-2 side-bar">
 			<ul class="nav list-unstyled class-list">
-				<li class="class-item slide">
+				<!-- <li class="class-item slide">
 					<a href="#" class="class-name">摄影</a>
 					<ul class="list-unstyled type-list">
 						<li class="type-item">
@@ -173,6 +173,9 @@
 							</ul>
 						</li>
 					</ul>
+				</li> -->
+				<li class="class-item slide">
+					<a href="javascript:void(0)" class="class-name">欢迎使用！</a>
 				</li>
 			</ul>
 		</div>

@@ -3,7 +3,8 @@
                 'proModel'=>$proModel,
                 'paramValModel'=>$paramValModel,
                 'paramArr'=>$paramArr,
-    		'classify_arr'=>$classify_arr,
-    		'parentArr'=>$parentArr,
-        
+	    		'classify_arr'=>$classify_arr,
+	    		'parentArr'=>$parentArr,
+	    		'paramOptionValueArr'=>$paramOptionValueArr,
+    			'picure_arr' => $picure_arr
 ));

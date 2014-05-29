@@ -33,13 +33,14 @@ class ProductClassify extends CActiveRecord
 		return array(
 			array('name, eg_name', 'required'),
 			array('is_del', 'numerical', 'integerOnly'=>true),
+			array('is_pro_class', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>100),
 			array('eg_name', 'length', 'max'=>80),
 			array('parent_id', 'length', 'max'=>10),
 			array('sort', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, eg_name, parent_id, sort, is_del', 'safe', 'on'=>'search'),
+			array('id, name, eg_name, parent_id, is_pro_class, sort, is_del', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +66,7 @@ class ProductClassify extends CActiveRecord
 			'name' => 'Name',
 			'eg_name' => 'Eg Name',
 			'parent_id' => 'Parent',
+			'is_pro_class' => 'Is Pro Class',
 			'sort' => 'Sort',
 			'is_del' => 'Is Del',
 		);
@@ -92,6 +94,7 @@ class ProductClassify extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('eg_name',$this->eg_name,true);
 		$criteria->compare('parent_id',$this->parent_id,true);
+		$criteria->compare('is_pro_class',$this->is_pro_class,true);
 		$criteria->compare('sort',$this->sort,true);
 		$criteria->compare('is_del',$this->is_del);
 

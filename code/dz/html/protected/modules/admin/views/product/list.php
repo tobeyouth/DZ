@@ -76,7 +76,7 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
 					<td>
 						<!--                                                   <a href="" class="btn btn btn-primary">修改</a>-->
                                                     <?php
-								echo CHtml::link ( '修改', Yii::app ()->createUrl ( '/admin/product/update', array (
+								echo CHtml::link ( '修改', Yii::app ()->createUrl ( '/admin/product/addDetail', array (
 										'id' => $v->id,
 										'classify' => $classifyArr->id 
 								) ), array (
@@ -107,7 +107,7 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
 									);
 						?>
 				</td>
-				<td>
+				<!-- <td>
 					<?php 
 						echo CHtml::link('添加详细',
 							Yii::app()->createUrl('admin/product/addDetail',
@@ -121,7 +121,7 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
 							)
 						);
 					?>
-				</td>
+				</td> -->
 
 				</tr>
                                         <?php

@@ -46,9 +46,7 @@
             <h4>基础信息</h4>
             <div class="form-group clearfix">
             	<?php 
-            		echo $form->hiddenField($product_model,'classify_id',array('value'=>$classify_arr->id))
-            	?>
-                <?php
+            		echo $form->hiddenField($product_model,'classify_id',array('value'=>$classify_arr->id));
                     echo $form->labelEx($product_model,'name',array('class'=>'col-sm-2 control-label'));
                 ?>
                 <div class="col-sm-6">
@@ -93,68 +91,52 @@
                     ?>
                 </div>
             </div>
+            <div class="form-group clearfix">
+                  <?php
+                    echo $form->labelEx($product_model,'picture',array('class'=>'col-sm-2 control-label'));
+                ?> 
+                <div class="col-sm-6">
+                    <input type="file" name="picture" id="picture" />
+                </div>
+                    <div>
+                    <?php
+                        echo $form->error($product_model,'picture');
+                    ?>
+                    </div>
+            </div>
         </div>
         <!-- 产品信息 -->
-<!--         <div class="form-block"> -->
-<!--             <h4>产品类别</h4> -->
-<!--             <div class="form-group clearfix"> -->
-<!--                 <label for="" class="col-sm-2 control-label">产品大类：</label> -->
-<!--                 <div class="col-sm-6"> -->
-                    <?php
-                    
-//                         array_unshift($classify_arr, '请选择产品大类');
-//                         echo $form->dropDownList($classify_model,'id',$classify_arr,array(
-//                             'class'=>'form-control',
-//                              'ajax'=>array(
-//                                  'type'=>'post',
-//                                    'url'=>  Yii::app()->createUrl('admin/ajax/getsublist'),
-//                                     'update'=>'#ProductClassify_sub_id'
-                                 
-//                              ),
-//                              )
-//                                 );
-//                     ?>
-                        
-<!--                 </div> -->
-<!--             </div> -->
-<!--             <div class="form-group clearfix"> -->
-<!--                 <label for="" class="col-sm-2 control-label">产品子类</label> -->
-<!--                 <div class="col-sm-6"> -->
-                    <?php
-//                         echo $form->dropDownList(
-//                                         $classify_model,
-//                                         'sub_id',
-//                                         array('请选择子分类'),
-//                                         array(
-//                                             'class'=>'form-control',
-//                                             'ajax'=>array(
-//                                                    'type'=>'post',
-//                                                     'url'=> Yii::app()->createUrl('admin/ajax/getSubSubList'),
-//                                                     'update'=>'#ProductClassify_sub_sub_id'
-//                                             )
-//                                         )
-//                                     );
-                    
-//                     ?>
-<!--                 </div> -->
-<!--             </div> -->
-<!--             <div class="form-group clearfix"> -->
-<!--                 <label for="" class="col-sm-2 control-label">产品子子类</label> -->
-<!--                 <div class="col-sm-6"> -->
-                    <?php
-//                         echo $form->dropDownList(
-//                                     $classify_model,
-//                                     'sub_sub_id',
-//                                     array('请选择子子类'),
-//                                     array(
-//                                         'class'=>'form-control'
-//                                     )
-//                                    );
-//                     ?>
-<!--                 </div> -->
-<!--             </div> -->
-<!--         </div> -->
-
+        <?php
+		echo "<div class='form-block'>";
+	    echo "<h4>产品信息</h4>";
+				if(!empty($paramArr)){
+					foreach ($paramArr as $k=>$v){
+						echo "<div class='form-group clearfix'>";
+		                           echo "<label class='col-sm-2 control-label'>".$v['name']."</label>";
+		                           echo "<div class='input-group col-sm-6'>";
+		                           if("text" == $v['form_option']){
+		                                  echo $form->textField($paramValModel,"param_{$v['id']}",array('class'=>'form-control'));
+		                                  echo $form->error($paramValModel,"param_{$v['id']}");
+		                           }else if("checkbox"==$v['form_option']){
+		                               echo $form->radioButtonList($paramValModel,"param_{$v['id']}",$paramOptionValueArr[$v['id']],array('separator'=>'&nbsp;&nbsp;&nbsp;'));
+		                                echo $form->error($paramValModel,"param_{$v['id']}");
+		                           } else if ("select"==$v['form_option']) {
+										echo $form->dropDownList($paramValModel,"param_{$v['id']}", $paramOptionValueArr[$v['id']],array('class'=>'select'));
+										echo $form->error($paramValModel,"param_{$v['id']}");
+									} else if ("textarea"==$v['form_option']) {
+										echo $form->textArea($paramValModel,"param_{$v['id']}", array('rows'=>6, 'cols'=>50));
+										echo $form->error($paramValModel,"param_{$v['id']}");
+									} else if ("radio"==$v['form_option']) {
+										echo $form->radioButtonList($paramValModel,"param_{$v['id']}",$paramOptionValueArr[$v['id']],array('separator'=>'&nbsp;&nbsp;&nbsp;'));
+										echo $form->error($paramValModel,"param_{$v['id']}");
+									}
+		                           echo "</div>";
+		                           echo "</div>";
+					}
+				}
+		echo "</div>";
+        ?>
+        
         <!-- 按钮 -->
         <div class="btn-box">
             <button type="submit" class="btn btn-primary btn-lg">保存</button>

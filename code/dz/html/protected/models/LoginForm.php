@@ -10,6 +10,7 @@ class LoginForm extends CFormModel
 	public $username;
 	public $password;
 	public $rememberMe;
+	public $email;
 
 	private $_identity;
 
@@ -37,6 +38,9 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			'rememberMe'=>'Remember me next time',
+			'username'=>'用户名',
+			'password'=>'密码',
+			'email'=>'邮箱',				
 		);
 	}
 

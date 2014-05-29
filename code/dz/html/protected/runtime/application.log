@@ -2547,3 +2547,1136 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/index.php?r=admin/productclassify/addclass&id=1
 ---
+2014/04/03 00:47:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/admin/ProductClassify/addClass".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/admin/Pro...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/admin/ProductClassify/addClass&id=2
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=10
+---
+2014/04/03 00:47:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/admin/ProductClassify/addClass".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/admin/Pro...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/admin/ProductClassify/addClass&id=2
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=10
+---
+2014/04/03 00:50:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ProductClassify/addClass".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('ProductClassify...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=ProductClassify/addClass&id=2
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=10
+---
+2014/04/03 01:04:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `dz_product_classify` `t` WHERE parent_id=:parentid and is_del=:is_del.
+in /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php (74)
+in /server/dz/html/index.php (20)
+2014/04/03 01:04:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT * FROM `dz_product_classify` `t` WHERE parent_id=:parentid and is_del=:is_del' in /server/dz/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /server/dz/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /server/dz/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /server/dz/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php(74): CActiveRecord->findAll('parent_id=:pare...', Array)
+#4 [internal function]: ProductClassifyController->actionAddClass('3')
+#5 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductClassifyController), Array)
+#6 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductClassifyController), Object(ReflectionMethod), Array)
+#7 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#11 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#12 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /server/dz/html/index.php(20): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&id=3
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/index/index
+---
+2014/04/03 01:08:44 [error] [exception.CException] exception 'CException' with message 'Property "ProductClassify.name下没有分类" is not defined.' in /server/dz/framework/base/CComponent.php:130
+Stack trace:
+#0 /server/dz/framework/db/ar/CActiveRecord.php(145): CComponent->__get('name???????????...')
+#1 /server/dz/html/protected/modules/admin/views/productClassify/addClass.php(60): CActiveRecord->__get('name???????????...')
+#2 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#3 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#4 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#5 /server/dz/framework/web/CController.php(782): CController->renderPartial('addClass', Array, true)
+#6 /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php(79): CController->render('addClass', Array)
+#7 [internal function]: ProductClassifyController->actionAddClass('3')
+#8 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductClassifyController), Array)
+#9 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductClassifyController), Object(ReflectionMethod), Array)
+#10 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#14 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#15 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /server/dz/html/index.php(20): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&id=3
+---
+2014/04/03 01:11:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message ' 您请求的页面不存在!' in /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php:87
+Stack trace:
+#0 /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php(70): ProductClassifyController->loadModel(0)
+#1 [internal function]: ProductClassifyController->actionAddClass('0')
+#2 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductClassifyController), Array)
+#3 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductClassifyController), Object(ReflectionMethod), Array)
+#4 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#8 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#9 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /server/dz/html/index.php(20): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&id=0
+---
+2014/04/03 19:33:27 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '14' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `dz_product_classify` (`id`, `name`, `eg_name`, `parent_id`, `sort`, `is_del`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php (79)
+in /server/dz/html/index.php (20)
+2014/04/03 19:33:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '14' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `dz_product_classify` (`id`, `name`, `eg_name`, `parent_id`, `sort`, `is_del`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /server/dz/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /server/dz/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /server/dz/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php(79): CActiveRecord->save(false)
+#3 [internal function]: ProductClassifyController->actionAddClass('14')
+#4 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductClassifyController), Array)
+#5 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductClassifyController), Object(ReflectionMethod), Array)
+#6 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#10 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#11 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /server/dz/html/index.php(20): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&id=14
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=14
+---
+2014/04/03 19:35:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '14' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `dz_product_classify` (`id`, `name`, `eg_name`, `parent_id`, `sort`, `is_del`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php (80)
+in /server/dz/html/index.php (20)
+2014/04/03 19:35:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '14' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `dz_product_classify` (`id`, `name`, `eg_name`, `parent_id`, `sort`, `is_del`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in /server/dz/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /server/dz/framework/db/ar/CActiveRecord.php(1077): CDbCommand->execute()
+#1 /server/dz/framework/db/ar/CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php(80): CActiveRecord->save(false)
+#3 [internal function]: ProductClassifyController->actionAddClass('14')
+#4 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductClassifyController), Array)
+#5 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductClassifyController), Object(ReflectionMethod), Array)
+#6 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#10 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#11 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /server/dz/html/index.php(20): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&id=14
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=14
+---
+2014/04/03 19:40:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=17
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=17
+---
+2014/04/07 20:50:03 [error] [php] trim() expects parameter 1 to be string, array given (/server/dz/framework/web/CUrlManager.php:297)
+Stack trace:
+#0 /server/dz/html/protected/modules/admin/views/productClassify/addClass.php(74): CWebApplication->createUrl()
+#1 /server/dz/framework/web/CBaseController.php(126): require()
+#2 /server/dz/framework/web/CBaseController.php(95): ProductClassifyController->renderInternal()
+#3 /server/dz/framework/web/CController.php(869): ProductClassifyController->renderFile()
+#4 /server/dz/framework/web/CController.php(782): ProductClassifyController->renderPartial()
+#5 /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php(95): ProductClassifyController->render()
+#6 unknown(0): ProductClassifyController->actionAddClass()
+#7 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#8 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /server/dz/framework/web/CController.php(286): ProductClassifyController->runAction()
+#11 /server/dz/framework/web/CController.php(265): ProductClassifyController->runActionWithFilters()
+#12 /server/dz/framework/web/CWebApplication.php(282): ProductClassifyController->run()
+#13 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&id=1
+in /server/dz/html/protected/modules/admin/views/productClassify/addClass.php (74)
+in /server/dz/html/protected/modules/admin/controllers/ProductClassifyController.php (95)
+in /server/dz/html/index.php (20)
+2014/04/07 21:14:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/paramname/add".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/paramname...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/paramname/add&classify_id=5
+---
+2014/04/09 21:54:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/productclassify/addclass".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/productcl...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/productclassify/addclass&id=1
+---
+2014/04/09 21:54:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/productclassify/addclass".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/productcl...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/productclassify/addclass&id=1
+---
+2014/04/11 22:00:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/productclassify/addclass".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/productcl...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/productclassify/addclass&id=5
+---
+2014/04/13 10:32:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`name` AS `t0_c1`, `t`.`eg_name` AS `t0_c2`, `t`.`color` AS `t0_c3`, `t`.`classify_id` AS `t0_c4`, `t`.`brand_id` AS `t0_c5`, `t`.`price` AS `t0_c6`, `t`.`update_time` AS `t0_c7`, `t`.`is_del` AS `t0_c8`, `classify`.`id` AS `t1_c0`, `classify`.`name` AS `t1_c1`, `classify`.`eg_name` AS `t1_c2`, `classify`.`parent_id` AS `t1_c3`, `classify`.`sort` AS `t1_c4`, `classify`.`is_del` AS `t1_c5` FROM `dz_product` `t`  LEFT OUTER JOIN `dz_product_classify` `classify` ON (`t`.`classify_id`=`classify`.`id`)  WHERE (classify_id=:classify_id and is_del=:is_del) LIMIT 5.
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (41)
+in /server/dz/html/index.php (20)
+2014/04/13 10:32:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`name` AS `t0_c1`, `t`.`eg_name` AS `t0_c2`, `t`.`color` AS `t0_c3`, `t`.`classify_id` AS `t0_c4`, `t`.`brand_id` AS `t0_c5`, `t`.`price` AS `t0_c6`, `t`.`update_time` AS `t0_c7`, `t`.`is_del` AS `t0_c8`, `classify`.`id` AS `t1_c0`, `classify`.`name` AS `t1_c1`, `classify`.`eg_name` AS `t1_c2`, `classify`.`parent_id` AS `t1_c3`, `classify`.`sort` AS `t1_c4`, `classify`.`is_del` AS `t1_c5` FROM `dz_product` `t`  LEFT OUTER JOIN `dz_product_classify` `classify` ON (`t`.`classify_id`=`classify`.`id`)  WHERE (classify_id=:classify_id and is_del=:is_del) LIMIT 5' in /server/dz/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /server/dz/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /server/dz/framework/db/ar/CActiveFinder.php(803): CDbCommand->queryAll()
+#2 /server/dz/framework/db/ar/CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /server/dz/framework/db/ar/CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 /server/dz/framework/db/ar/CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 /server/dz/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 /server/dz/html/protected/modules/admin/controllers/ProductController.php(41): CActiveRecord->findAll(Array, Array)
+#7 /server/dz/framework/web/actions/CInlineAction.php(49): ProductController->actionList()
+#8 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /server/dz/framework/web/CWebApplication.php(282): CController->run('list')
+#12 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/l...')
+#13 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /server/dz/html/index.php(20): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=admin/product/list&classify=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=1
+---
+2014/04/13 10:33:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT * FROM `dz_product` `t` WHERE classify_id=:classify_id and is_del=:is_del LIMIT 5.
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (41)
+in /server/dz/html/index.php (20)
+2014/04/13 10:33:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT * FROM `dz_product` `t` WHERE classify_id=:classify_id and is_del=:is_del LIMIT 5' in /server/dz/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /server/dz/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /server/dz/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /server/dz/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /server/dz/html/protected/modules/admin/controllers/ProductController.php(41): CActiveRecord->findAll(Array, Array)
+#4 /server/dz/framework/web/actions/CInlineAction.php(49): ProductController->actionList()
+#5 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /server/dz/framework/web/CWebApplication.php(282): CController->run('list')
+#9 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/l...')
+#10 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /server/dz/html/index.php(20): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=admin/product/list&classify=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=1
+---
+2014/04/13 10:35:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT * FROM `dz_product` `t` WHERE classify_id=:classify_id and is_del=:is_del LIMIT 5.
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (41)
+in /server/dz/html/index.php (20)
+2014/04/13 10:35:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT * FROM `dz_product` `t` WHERE classify_id=:classify_id and is_del=:is_del LIMIT 5' in /server/dz/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /server/dz/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /server/dz/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /server/dz/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /server/dz/html/protected/modules/admin/controllers/ProductController.php(41): CActiveRecord->findAll(Array, Array)
+#4 /server/dz/framework/web/actions/CInlineAction.php(49): ProductController->actionList()
+#5 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /server/dz/framework/web/CWebApplication.php(282): CController->run('list')
+#9 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/l...')
+#10 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /server/dz/html/index.php(20): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=admin/product/list&classify=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=1
+---
+2014/04/13 10:38:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_del' in where clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`name` AS `t0_c1`, `t`.`eg_name` AS `t0_c2`, `t`.`color` AS `t0_c3`, `t`.`classify_id` AS `t0_c4`, `t`.`brand_id` AS `t0_c5`, `t`.`price` AS `t0_c6`, `t`.`update_time` AS `t0_c7`, `t`.`is_del` AS `t0_c8`, `classify`.`id` AS `t1_c0`, `classify`.`name` AS `t1_c1`, `classify`.`eg_name` AS `t1_c2`, `classify`.`parent_id` AS `t1_c3`, `classify`.`sort` AS `t1_c4`, `classify`.`is_del` AS `t1_c5` FROM `dz_product` `t`  LEFT OUTER JOIN `dz_product_classify` `classify` ON (`t`.`classify_id`=`classify`.`id`)  WHERE (classify_id=5 and is_del=0) LIMIT 5.
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (41)
+in /server/dz/html/index.php (20)
+2014/04/13 10:38:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'is_del' in where clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`name` AS `t0_c1`, `t`.`eg_name` AS `t0_c2`, `t`.`color` AS `t0_c3`, `t`.`classify_id` AS `t0_c4`, `t`.`brand_id` AS `t0_c5`, `t`.`price` AS `t0_c6`, `t`.`update_time` AS `t0_c7`, `t`.`is_del` AS `t0_c8`, `classify`.`id` AS `t1_c0`, `classify`.`name` AS `t1_c1`, `classify`.`eg_name` AS `t1_c2`, `classify`.`parent_id` AS `t1_c3`, `classify`.`sort` AS `t1_c4`, `classify`.`is_del` AS `t1_c5` FROM `dz_product` `t`  LEFT OUTER JOIN `dz_product_classify` `classify` ON (`t`.`classify_id`=`classify`.`id`)  WHERE (classify_id=5 and is_del=0) LIMIT 5' in /server/dz/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /server/dz/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /server/dz/framework/db/ar/CActiveFinder.php(803): CDbCommand->queryAll()
+#2 /server/dz/framework/db/ar/CActiveFinder.php(437): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /server/dz/framework/db/ar/CActiveFinder.php(68): CJoinElement->find(Object(CDbCriteria))
+#4 /server/dz/framework/db/ar/CActiveRecord.php(1356): CActiveFinder->query(Object(CDbCriteria), true)
+#5 /server/dz/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#6 /server/dz/html/protected/modules/admin/controllers/ProductController.php(41): CActiveRecord->findAll(Array)
+#7 /server/dz/framework/web/actions/CInlineAction.php(49): ProductController->actionList()
+#8 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /server/dz/framework/web/CWebApplication.php(282): CController->run('list')
+#12 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/l...')
+#13 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /server/dz/html/index.php(20): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 10:46:05 [error] [php] Invalid argument supplied for foreach() (/server/dz/html/protected/modules/admin/views/product/_jsq_form.php:87)
+Stack trace:
+#0 /server/dz/framework/web/CController.php(869): ProductController->renderFile()
+#1 /server/dz/html/protected/modules/admin/views/product/jsq.php(7): ProductController->renderPartial()
+#2 /server/dz/framework/web/CBaseController.php(126): require()
+#3 /server/dz/framework/web/CBaseController.php(95): ProductController->renderInternal()
+#4 /server/dz/framework/web/CController.php(869): ProductController->renderFile()
+#5 /server/dz/framework/web/CController.php(782): ProductController->renderPartial()
+#6 /server/dz/html/protected/modules/admin/controllers/ProductController.php(83): ProductController->render()
+#7 unknown(0): ProductController->actionJsq()
+#8 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /server/dz/framework/web/CController.php(286): ProductController->runAction()
+#12 /server/dz/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#13 /server/dz/framework/web/CWebApplication.php(282): ProductController->run()
+#14 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/product/jsq&id=9
+in /server/dz/html/protected/modules/admin/views/product/_jsq_form.php (87)
+in /server/dz/html/protected/modules/admin/views/product/jsq.php (7)
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (83)
+2014/04/13 10:55:17 [error] [exception.CException] exception 'CException' with message 'CDbCriteria and its behaviors do not have a method or closure named "condition".' in /server/dz/framework/base/CComponent.php:266
+Stack trace:
+#0 /server/dz/html/protected/modules/admin/controllers/ProductController.php(36): CComponent->__call('condition', Array)
+#1 /server/dz/html/protected/modules/admin/controllers/ProductController.php(36): CDbCriteria->condition('classify_id=:cl...')
+#2 /server/dz/framework/web/actions/CInlineAction.php(49): ProductController->actionList()
+#3 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /server/dz/framework/web/CWebApplication.php(282): CController->run('list')
+#7 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/l...')
+#8 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /server/dz/html/index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=admin/product/list&classify=13
+---
+2014/04/13 10:56:15 [error] [exception.CException] exception 'CException' with message 'CDbCriteria and its behaviors do not have a method or closure named "order".' in /server/dz/framework/base/CComponent.php:266
+Stack trace:
+#0 /server/dz/html/protected/modules/admin/controllers/ProductController.php(38): CComponent->__call('order', Array)
+#1 /server/dz/html/protected/modules/admin/controllers/ProductController.php(38): CDbCriteria->order('id desc')
+#2 /server/dz/framework/web/actions/CInlineAction.php(49): ProductController->actionList()
+#3 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /server/dz/framework/web/CWebApplication.php(282): CController->run('list')
+#7 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/l...')
+#8 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /server/dz/html/index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=admin/product/list&classify=13
+---
+2014/04/13 11:51:19 [error] [php] Invalid argument supplied for foreach() (/server/dz/html/protected/modules/admin/views/product/_jsq_form.php:87)
+Stack trace:
+#0 /server/dz/framework/web/CController.php(869): ProductController->renderFile()
+#1 /server/dz/html/protected/modules/admin/views/product/jsq.php(7): ProductController->renderPartial()
+#2 /server/dz/framework/web/CBaseController.php(126): require()
+#3 /server/dz/framework/web/CBaseController.php(95): ProductController->renderInternal()
+#4 /server/dz/framework/web/CController.php(869): ProductController->renderFile()
+#5 /server/dz/framework/web/CController.php(782): ProductController->renderPartial()
+#6 /server/dz/html/protected/modules/admin/controllers/ProductController.php(88): ProductController->render()
+#7 unknown(0): ProductController->actionJsq()
+#8 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /server/dz/framework/web/CController.php(286): ProductController->runAction()
+#12 /server/dz/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#13 /server/dz/framework/web/CWebApplication.php(282): ProductController->run()
+#14 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/product/jsq&id=8
+in /server/dz/html/protected/modules/admin/views/product/_jsq_form.php (87)
+in /server/dz/html/protected/modules/admin/views/product/jsq.php (7)
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (88)
+2014/04/13 12:12:02 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "hidden".' in /server/dz/framework/base/CComponent.php:266
+Stack trace:
+#0 /server/dz/html/protected/modules/admin/views/product/_form.php(45): CComponent->__call('hidden', Array)
+#1 /server/dz/html/protected/modules/admin/views/product/_form.php(45): CActiveForm->hidden(Object(Product), 'classify_id', Array)
+#2 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#3 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#4 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#5 /server/dz/html/protected/modules/admin/views/product/add.php(13): CController->renderPartial('_form', Array)
+#6 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#7 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#8 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#9 /server/dz/framework/web/CController.php(782): CController->renderPartial('add', Array, true)
+#10 /server/dz/html/protected/modules/admin/controllers/ProductController.php(28): CController->render('add', Array)
+#11 /server/dz/framework/web/actions/CInlineAction.php(49): ProductController->actionAdd()
+#12 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /server/dz/framework/web/CWebApplication.php(282): CController->run('add')
+#16 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#17 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /server/dz/html/index.php(20): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=admin/product/add&classify=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 12:14:33 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'param_294'. The SQL statement executed was: CREATE TABLE IF NOT EXISTS `dz_param_value_1` (
+            		`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+            		`pro_id` int(10) unsigned NOT NULL,
+            		`param_287` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_288` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_289` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_290` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_291` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_292` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_293` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_294` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_294` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_295` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+            		PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB CHARSET=utf8.
+in /server/dz/html/protected/modules/admin/controllers/ParamNameController.php (163)
+in /server/dz/html/index.php (20)
+2014/04/13 12:14:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'param_294'. The SQL statement executed was: CREATE TABLE IF NOT EXISTS `dz_param_value_1` (
+            		`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+            		`pro_id` int(10) unsigned NOT NULL,
+            		`param_287` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_288` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_289` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_290` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_291` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_292` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_293` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_294` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_294` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_295` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+            		PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB CHARSET=utf8' in /server/dz/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /server/dz/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /server/dz/html/protected/modules/admin/controllers/ParamNameController.php(163): CDbCommand->query()
+#2 /server/dz/framework/web/actions/CInlineAction.php(49): ParamNameController->actionAjax()
+#3 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /server/dz/framework/web/CWebApplication.php(282): CController->run('ajax')
+#7 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/paramName...')
+#8 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /server/dz/html/index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=admin/paramName/ajax
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/paramName/add&classify_id=1
+---
+2014/04/13 12:15:03 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'param_303'. The SQL statement executed was: CREATE TABLE IF NOT EXISTS `dz_param_value_1` (
+            		`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+            		`pro_id` int(10) unsigned NOT NULL,
+            		`param_296` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_297` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_298` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_299` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_300` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_301` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_302` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_303` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_303` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_304` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+            		PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB CHARSET=utf8.
+in /server/dz/html/protected/modules/admin/controllers/ParamNameController.php (163)
+in /server/dz/html/index.php (20)
+2014/04/13 12:15:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'param_303'. The SQL statement executed was: CREATE TABLE IF NOT EXISTS `dz_param_value_1` (
+            		`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+            		`pro_id` int(10) unsigned NOT NULL,
+            		`param_296` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_297` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_298` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_299` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_300` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_301` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_302` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_303` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_303` varchar(255) CHARACTER SET utf8 DEFAULT NULL,`param_304` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+            		PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB CHARSET=utf8' in /server/dz/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /server/dz/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /server/dz/html/protected/modules/admin/controllers/ParamNameController.php(163): CDbCommand->query()
+#2 /server/dz/framework/web/actions/CInlineAction.php(49): ParamNameController->actionAjax()
+#3 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /server/dz/framework/web/CWebApplication.php(282): CController->run('ajax')
+#7 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/paramName...')
+#8 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /server/dz/html/index.php(20): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=admin/paramName/ajax
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/paramName/add&classify_id=1
+---
+2014/04/13 12:21:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /server/dz/framework/web/CController.php:483
+Stack trace:
+#0 /server/dz/framework/web/CController.php(270): CController->missingAction('update')
+#1 /server/dz/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/u...')
+#3 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /server/dz/html/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/product/update&id=27&classify=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 12:22:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /server/dz/framework/web/CController.php:483
+Stack trace:
+#0 /server/dz/framework/web/CController.php(270): CController->missingAction('update')
+#1 /server/dz/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/u...')
+#3 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /server/dz/html/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/product/update&id=27&classify=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 12:22:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in /server/dz/framework/web/CController.php:483
+Stack trace:
+#0 /server/dz/framework/web/CController.php(270): CController->missingAction('update')
+#1 /server/dz/framework/web/CWebApplication.php(282): CController->run('update')
+#2 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/u...')
+#3 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /server/dz/html/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/product/update&id=27&classify=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 12:28:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5&page=2
+---
+2014/04/13 12:37:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 12:45:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "addmin/product/lsit".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('addmin/product/...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=addmin/product/lsit&classify=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=1
+---
+2014/04/13 12:46:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "addmin/product/lsit".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('addmin/product/...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=addmin/product/lsit&classify=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=1
+---
+2014/04/13 12:47:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lsit".' in /server/dz/framework/web/CController.php:483
+Stack trace:
+#0 /server/dz/framework/web/CController.php(270): CController->missingAction('lsit')
+#1 /server/dz/framework/web/CWebApplication.php(282): CController->run('lsit')
+#2 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/l...')
+#3 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /server/dz/html/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/product/lsit&classify=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/ProductClassify/addClass&id=1
+---
+2014/04/13 12:52:43 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/update&id=8&classify=5
+---
+2014/04/13 12:55:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/update&id=8&classify=5
+---
+2014/04/13 12:58:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=5
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/add&id=8&classify=5
+---
+2014/04/13 12:59:08 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=4
+---
+2014/04/13 12:59:55 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=6
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/add&classify=6
+---
+2014/04/13 13:10:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addClass')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/addClass&0%5Bid%5D=4
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=4
+---
+2014/04/13 13:43:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Delete".' in /server/dz/framework/web/CController.php:483
+Stack trace:
+#0 /server/dz/framework/web/CController.php(270): CController->missingAction('Delete')
+#1 /server/dz/framework/web/CWebApplication.php(282): CController->run('Delete')
+#2 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/ProductCl...')
+#3 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /server/dz/html/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/ProductClassify/Delete
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 13:49:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addDetail".' in /server/dz/framework/web/CController.php:483
+Stack trace:
+#0 /server/dz/framework/web/CController.php(270): CController->missingAction('addDetail')
+#1 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#2 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#3 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /server/dz/html/index.php(20): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=5&id=28
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 14:06:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /server/dz/framework/web/CController.php:336
+Stack trace:
+#0 /server/dz/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#2 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#4 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#5 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /server/dz/html/index.php(20): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail
+---
+2014/04/13 14:18:38 [error] [php] Invalid argument supplied for foreach() (/server/dz/html/protected/modules/admin/views/product/_addDetail_form.php:87)
+Stack trace:
+#0 /server/dz/framework/web/CController.php(869): ProductController->renderFile()
+#1 /server/dz/html/protected/modules/admin/views/product/addDetail.php(7): ProductController->renderPartial()
+#2 /server/dz/framework/web/CBaseController.php(126): require()
+#3 /server/dz/framework/web/CBaseController.php(95): ProductController->renderInternal()
+#4 /server/dz/framework/web/CController.php(869): ProductController->renderFile()
+#5 /server/dz/framework/web/CController.php(782): ProductController->renderPartial()
+#6 /server/dz/html/protected/modules/admin/controllers/ProductController.php(132): ProductController->render()
+#7 unknown(0): ProductController->actionAddDetail()
+#8 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#9 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /server/dz/framework/web/CController.php(286): ProductController->runAction()
+#12 /server/dz/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#13 /server/dz/framework/web/CWebApplication.php(282): ProductController->run()
+#14 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#15 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=5&id=28
+in /server/dz/html/protected/modules/admin/views/product/_addDetail_form.php (87)
+in /server/dz/html/protected/modules/admin/views/product/addDetail.php (7)
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (132)
+2014/04/13 14:37:48 [error] [exception.CException] exception 'CException' with message 'Property "ParamValue.param_201" is not defined.' in /server/dz/framework/base/CComponent.php:130
+Stack trace:
+#0 /server/dz/framework/db/ar/CActiveRecord.php(145): CComponent->__get('param_201')
+#1 /server/dz/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('param_201')
+#2 /server/dz/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(ParamValue), 'param_201')
+#3 /server/dz/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(ParamValue), 'param_201', Array)
+#4 /server/dz/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(ParamValue), 'param_201', Array)
+#5 /server/dz/html/protected/modules/admin/views/product/_addDetail_form.php(119): CActiveForm->textField(Object(ParamValue), 'param_201', Array)
+#6 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#7 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#8 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#9 /server/dz/html/protected/modules/admin/views/product/addDetail.php(7): CController->renderPartial('_addDetail_form', Array)
+#10 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#11 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#12 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#13 /server/dz/framework/web/CController.php(782): CController->renderPartial('addDetail', Array, true)
+#14 /server/dz/html/protected/modules/admin/controllers/ProductController.php(132): CController->render('addDetail', Array)
+#15 [internal function]: ProductController->actionAddDetail('30')
+#16 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#17 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#18 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#20 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#22 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#23 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /server/dz/html/index.php(20): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=4&id=30
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=4
+---
+2014/04/13 14:39:38 [error] [exception.CException] exception 'CException' with message 'Property "ParamValue.param_201" is not defined.' in /server/dz/framework/base/CComponent.php:130
+Stack trace:
+#0 /server/dz/framework/db/ar/CActiveRecord.php(145): CComponent->__get('param_201')
+#1 /server/dz/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('param_201')
+#2 /server/dz/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(ParamValue), 'param_201')
+#3 /server/dz/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(ParamValue), 'param_201', Array)
+#4 /server/dz/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(ParamValue), 'param_201', Array)
+#5 /server/dz/html/protected/modules/admin/views/product/_addDetail_form.php(119): CActiveForm->textField(Object(ParamValue), 'param_201', Array)
+#6 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#7 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#8 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#9 /server/dz/html/protected/modules/admin/views/product/addDetail.php(7): CController->renderPartial('_addDetail_form', Array)
+#10 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#11 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#12 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#13 /server/dz/framework/web/CController.php(782): CController->renderPartial('addDetail', Array, true)
+#14 /server/dz/html/protected/modules/admin/controllers/ProductController.php(132): CController->render('addDetail', Array)
+#15 [internal function]: ProductController->actionAddDetail('30')
+#16 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#17 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#18 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#20 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#22 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#23 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /server/dz/html/index.php(20): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=4&id=30
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=4
+---
+2014/04/13 14:40:22 [error] [exception.CException] exception 'CException' with message 'Property "ParamValue.param_1" is not defined.' in /server/dz/framework/base/CComponent.php:130
+Stack trace:
+#0 /server/dz/framework/db/ar/CActiveRecord.php(145): CComponent->__get('param_1')
+#1 /server/dz/framework/web/helpers/CHtml.php(2529): CActiveRecord->__get('param_1')
+#2 /server/dz/framework/web/helpers/CHtml.php(2252): CHtml::resolveValue(Object(ParamValue), 'param_1')
+#3 /server/dz/framework/web/helpers/CHtml.php(1434): CHtml::activeInputField('text', Object(ParamValue), 'param_1', Array)
+#4 /server/dz/framework/web/widgets/CActiveForm.php(725): CHtml::activeTextField(Object(ParamValue), 'param_1', Array)
+#5 /server/dz/html/protected/modules/admin/views/product/_addDetail_form.php(119): CActiveForm->textField(Object(ParamValue), 'param_1', Array)
+#6 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#7 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#8 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#9 /server/dz/html/protected/modules/admin/views/product/addDetail.php(7): CController->renderPartial('_addDetail_form', Array)
+#10 /server/dz/framework/web/CBaseController.php(126): require('/server/dz/html...')
+#11 /server/dz/framework/web/CBaseController.php(95): CBaseController->renderInternal('/server/dz/html...', Array, true)
+#12 /server/dz/framework/web/CController.php(869): CBaseController->renderFile('/server/dz/html...', Array, true)
+#13 /server/dz/framework/web/CController.php(782): CController->renderPartial('addDetail', Array, true)
+#14 /server/dz/html/protected/modules/admin/controllers/ProductController.php(132): CController->render('addDetail', Array)
+#15 [internal function]: ProductController->actionAddDetail('28')
+#16 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#17 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#18 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#19 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#20 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#22 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#23 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#24 /server/dz/html/index.php(20): CApplication->run()
+#25 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=5&id=28
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/list&classify=5
+---
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_7" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_8" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_9" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_10" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_11" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_12" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_13" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_14" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_15" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_16" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_17" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_18" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_19" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_20" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_21" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_22" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_23" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_24" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_25" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_26" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_27" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_28" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_29" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_30" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:52:23 [warning] [application] Failed to set unsafe attribute "param_31" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_7" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_8" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_9" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_10" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_11" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_12" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_13" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_14" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_15" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_16" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_17" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_18" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_19" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_20" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_21" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_22" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_23" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_24" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_25" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_26" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_27" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_28" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_29" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_30" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 14:54:39 [warning] [application] Failed to set unsafe attribute "param_31" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:01:01 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:03:27 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:04:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/product/addDetail".' in /server/dz/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#1 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /server/dz/html/index.php(20): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+---
+2014/04/13 15:05:43 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:10:11 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:17:17 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:21:36 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:23:24 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:24:21 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:24:21 [error] [php] Missing argument 1 for CActiveRecord::saveAttributes(), called in /server/dz/html/protected/modules/admin/controllers/ProductController.php on line 131 and defined (/server/dz/framework/db/ar/CActiveRecord.php:1151)
+Stack trace:
+#0 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /server/dz/framework/web/CController.php(286): ProductController->runAction()
+#4 /server/dz/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#5 /server/dz/framework/web/CWebApplication.php(282): ProductController->run()
+#6 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (131)
+in /server/dz/html/index.php (20)
+2014/04/13 15:26:49 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:26:49 [error] [php] Missing argument 1 for CActiveRecord::saveAttributes(), called in /server/dz/html/protected/modules/admin/controllers/ProductController.php on line 131 and defined (/server/dz/framework/db/ar/CActiveRecord.php:1151)
+Stack trace:
+#0 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /server/dz/framework/web/CController.php(286): ProductController->runAction()
+#4 /server/dz/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#5 /server/dz/framework/web/CWebApplication.php(282): ProductController->run()
+#6 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (131)
+in /server/dz/html/index.php (20)
+2014/04/13 15:28:30 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:28:30 [error] [php] Missing argument 1 for CModel::isAttributeSafe(), called in /server/dz/html/protected/modules/admin/controllers/ProductController.php on line 131 and defined (/server/dz/framework/base/CModel.php:318)
+Stack trace:
+#0 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /server/dz/framework/web/CController.php(286): ProductController->runAction()
+#4 /server/dz/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#5 /server/dz/framework/web/CWebApplication.php(282): ProductController->run()
+#6 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (131)
+in /server/dz/html/index.php (20)
+2014/04/13 15:28:58 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:30:55 [warning] [application] Failed to set unsafe attribute "param_366" of "ParamValue".
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (128)
+in /server/dz/html/index.php (20)
+2014/04/13 15:45:23 [error] [exception.CDbException] exception 'CDbException' with message 'No columns are being updated for table "dz_param_value_9".' in /server/dz/framework/db/schema/CDbCommandBuilder.php:392
+Stack trace:
+#0 /server/dz/framework/db/ar/CActiveRecord.php(1747): CDbCommandBuilder->createUpdateCommand(Object(CMysqlTableSchema), Array, Object(CDbCriteria))
+#1 /server/dz/framework/db/ar/CActiveRecord.php(1124): CActiveRecord->updateByPk(NULL, Array)
+#2 /server/dz/html/protected/modules/admin/controllers/ProductController.php(137): CActiveRecord->update(Array, 'pro_id=:pro_id', Array)
+#3 [internal function]: ProductController->actionAddDetail('32')
+#4 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#5 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#6 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#10 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#11 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /server/dz/html/index.php(20): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/addDetail&classify=9&id=32
+---
+2014/04/13 15:45:57 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.pro_id" is not defined.' in /server/dz/framework/base/CComponent.php:173
+Stack trace:
+#0 /server/dz/framework/db/schema/CDbCriteria.php(160): CComponent->__set('pro_id', 32)
+#1 /server/dz/framework/db/schema/CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 /server/dz/framework/db/ar/CActiveRecord.php(1764): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /server/dz/html/protected/modules/admin/controllers/ProductController.php(137): CActiveRecord->updateAll('pro_id=:pro_id', Array)
+#4 [internal function]: ProductController->actionAddDetail('32')
+#5 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#6 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#7 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#11 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#12 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /server/dz/html/index.php(20): CApplication->run()
+#14 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/addDetail&classify=9&id=32
+---
+2014/04/13 15:48:33 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.pro_id" is not defined.' in /server/dz/framework/base/CComponent.php:173
+Stack trace:
+#0 /server/dz/framework/db/schema/CDbCriteria.php(160): CComponent->__set('pro_id', NULL)
+#1 /server/dz/framework/db/schema/CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 /server/dz/framework/db/schema/CDbCommandBuilder.php(661): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /server/dz/framework/db/ar/CActiveRecord.php(1518): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), 'pro_id=:pro_id', Array, Array, '`t`.')
+#4 /server/dz/html/protected/modules/admin/controllers/ProductController.php(128): CActiveRecord->findByAttributes('pro_id=:pro_id', Array)
+#5 [internal function]: ProductController->actionAddDetail('32')
+#6 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#12 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#13 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /server/dz/html/index.php(20): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/addDetail&classify=9&id=32
+---
+2014/04/13 15:49:17 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.pro_id" is not defined.' in /server/dz/framework/base/CComponent.php:173
+Stack trace:
+#0 /server/dz/framework/db/schema/CDbCriteria.php(160): CComponent->__set('pro_id', 32)
+#1 /server/dz/framework/db/schema/CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 /server/dz/framework/db/schema/CDbCommandBuilder.php(661): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /server/dz/framework/db/ar/CActiveRecord.php(1518): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), 'pro_id=:pro_id', Array, Array, '`t`.')
+#4 /server/dz/html/protected/modules/admin/controllers/ProductController.php(129): CActiveRecord->findByAttributes('pro_id=:pro_id', Array)
+#5 [internal function]: ProductController->actionAddDetail('32')
+#6 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#12 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#13 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /server/dz/html/index.php(20): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/addDetail&classify=9&id=32
+---
+2014/04/13 15:49:57 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.pro_id" is not defined.' in /server/dz/framework/base/CComponent.php:173
+Stack trace:
+#0 /server/dz/framework/db/schema/CDbCriteria.php(160): CComponent->__set('pro_id', 32)
+#1 /server/dz/framework/db/schema/CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 /server/dz/framework/db/schema/CDbCommandBuilder.php(661): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /server/dz/framework/db/ar/CActiveRecord.php(1518): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), 'pro_id=:pro_id', Array, Array, '`t`.')
+#4 /server/dz/html/protected/modules/admin/controllers/ProductController.php(129): CActiveRecord->findByAttributes('pro_id=:pro_id', Array)
+#5 [internal function]: ProductController->actionAddDetail('32')
+#6 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#7 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#8 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#12 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#13 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /server/dz/html/index.php(20): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/addDetail&classify=9&id=32
+---
+2014/04/13 15:53:09 [error] [php] Missing argument 2 for CActiveRecord::updateByPk(), called in /server/dz/html/protected/modules/admin/controllers/ProductController.php on line 140 and defined (/server/dz/framework/db/ar/CActiveRecord.php:1741)
+Stack trace:
+#0 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /server/dz/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /server/dz/framework/web/CController.php(286): ProductController->runAction()
+#4 /server/dz/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#5 /server/dz/framework/web/CWebApplication.php(282): ProductController->run()
+#6 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /server/dz/html/index.php(20): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+in /server/dz/html/protected/modules/admin/controllers/ProductController.php (140)
+in /server/dz/html/index.php (20)
+2014/04/13 16:05:44 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "creteUrl".' in /server/dz/framework/base/CComponent.php:266
+Stack trace:
+#0 /server/dz/html/protected/modules/admin/controllers/ProductController.php(154): CComponent->__call('creteUrl', Array)
+#1 /server/dz/html/protected/modules/admin/controllers/ProductController.php(154): CWebApplication->creteUrl('admin/product/a...', Array)
+#2 [internal function]: ProductController->actionAddDetail('32')
+#3 /server/dz/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#4 /server/dz/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#5 /server/dz/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /server/dz/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /server/dz/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /server/dz/framework/web/CWebApplication.php(282): CController->run('addDetail')
+#9 /server/dz/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/product/a...')
+#10 /server/dz/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /server/dz/html/index.php(20): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=admin/product/addDetail&classify=9&id=32
+HTTP_REFERER=http://yingcool.me/index.php?r=admin/product/addDetail&classify=9&id=32
+---

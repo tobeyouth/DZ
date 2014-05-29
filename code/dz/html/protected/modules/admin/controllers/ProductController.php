@@ -6,6 +6,15 @@
  */
 class ProductController extends CController{
     public $layout='//layouts/admin';
+    private $_uptypes = array(
+						    'image/jpg',
+						    'image/jpeg',
+						    'image/png',
+						    'image/pjpeg',
+						    'image/gif',
+						    'image/bmp',
+						    'image/x-png'
+						);
     
     public function actionAdd(){
         $product_model = new Product;
@@ -17,18 +26,86 @@ class ProductController extends CController{
 		if(0!=$classifyArr->parent_id) {
 			$parentArr = $product_classify_model->findByAttributes(array('id'=>$classifyArr->parent_id));
 		}
+		$paramValModel = new ParamValue($classify);
+
+		$cmd = Yii::app()->db->createCommand();
+		$cmd->select("*");
+		$cmd->from('dz_param_name');
+		$cmd->where('classify_id=:classify_id',array(':classify_id'=>$classify));
+		$paramArr = $cmd->queryAll();
+		if(empty($paramArr)){
+			throw  new CHttpException('500','没有该分类下的详细参数，请去生成对应表单');
+		}
+		
+		$paramOptionId = array();
+		foreach ($paramArr as $val) {
+			$paramOptionId[] = $val['id'];
+		}
+		$paramOptionIdStr = join($paramOptionId, ',');
+		$cmd = Yii::app()->db->createCommand();
+		$cmd->select("*");
+		$cmd->from('dz_param_option_value');
+		$cmd->where("param_name_id in({$paramOptionIdStr})");
+		$res = $cmd->queryAll();
+		//$res = $paramValModel->findAll('param_name_id in(:param_name_id)',array(':param_name_id'=>join($paramOptionId, ',')));
+		$paramOptionValueArr = array();
+		if ($res) {
+			foreach ($res as $val) {
+				$paramOptionValueArr[$val['param_name_id']][$val['id']] = $val['value'];
+			}
+		}
         if(isset($_POST['Product'])){
             $product_model->attributes = $_POST['Product'];
             $product_model->update_time = time();
-            if($product_model->save()){
-                $this->redirect(Yii::app()->createUrl('admin/product/list',array('classify'=>$classify)));
+            if(!$product_model->save()){
+				echo 'no';
+				die;
+            }
+            
+            $paramValModel->pro_id = $product_model->attributes['id'];
+            foreach ($_POST['ParamValue'] as $k=>$v){
+            	$paramValModel->$k = $v;
+            	$paramValModel->isAttributeSafe($k);
+            }
+
+            $paramValModel->isNewRecord = true;
+            $saveFlag = $paramValModel->save(false);
+            
+            if ( $_FILES['picture']['name'] && in_array($_FILES['picture']["type"], $this->_uptypes) ) {
+            	$pictureModel = new Picture;
+            	$pictureModel->pro_id = $product_model->attributes['id'];
+            	$pictureModel->ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION );
+            	$pictureModel->add_time = time();
+            	$pictureModel->isNewRecord = true;
+            	$pictureModel->save(false);
+            	
+            	$dir = floor($pictureModel->attributes['id']/1000);
+            	$dir = "/server/dz/html/images/product/{$dir}/";
+            	if ( !file_exists($dir) ) {
+            		@mkdir($dir, 0777);
+            	}
+            	move_uploaded_file($_FILES['picture']['tmp_name'], $dir."{$pictureModel->attributes['id']}.{$pictureModel->attributes['ext']}");
+            }
+            
+            if($saveFlag){
+            	header("Content-type: text/html; charset=utf-8");
+            	echo '<script>alert("修改成功")</script>';
+            	$this->redirect(Yii::app()->createUrl('admin/product/list',array('classify'=>$classify)));
+            }else{
+            	header("Content-type: text/html; charset=utf-8");
+            	echo '<script>alert("修改失败")</script>';
+            	$this->redirect(Yii::app()->createUrl('admin/product/list',array('classify'=>$classify)));
             }
         }
+        
         $this->render('add',array(
                 'product_model'=>$product_model,
                 'classify_model'=>$product_classify_model,
                 'classify_arr'=>$classifyArr,
-        		'parentArr'=>$parentArr,	
+        		'parentArr'=>$parentArr,
+        		'paramValModel'=>$paramValModel,
+        		'paramArr'=>$paramArr,
+        		'paramOptionValueArr'=>$paramOptionValueArr
         ));
     }
     
@@ -122,11 +199,29 @@ class ProductController extends CController{
     	if(empty($paramArr)){
     		throw  new CHttpException('500','没有该分类下的详细参数，请去生成对应表单');
     	}
+    	
     	$paramValModel = new ParamValue($classId);
     	$isExists = $paramValModel->exists('pro_id=:pro_id',array('pro_id'=>$proModel->id));
     	if($isExists){
     		$paramValueArr = $paramValModel->find('pro_id=:pro_id',array('pro_id'=>$proModel->id));
     		$paramValModel = $paramValModel->findByPk($paramValueArr->id);
+    	}
+    	
+    	$paramOptionId = array();
+    	foreach ($paramArr as $val) {
+    		$paramOptionId[] = $val['id'];
+    	}
+    	$paramOptionIdStr = join($paramOptionId, ',');
+    	$cmd = Yii::app()->db->createCommand();
+    	$cmd->select("*");
+    	$cmd->from('dz_param_option_value');
+    	$cmd->where("param_name_id in({$paramOptionIdStr})");
+    	$res = $cmd->queryAll();
+    	$paramOptionValueArr = array();
+    	if ($res) {
+    		foreach ($res as $val) {
+    			$paramOptionValueArr[$val['param_name_id']][$val['id']] = $val['value'];
+    		}
     	}
     	$saveFlag = false;
     	$product_classify_model = ProductClassify::model();
@@ -134,6 +229,18 @@ class ProductController extends CController{
     	if(0!=$classifyArr->parent_id) {
     		$parentArr = $product_classify_model->findByAttributes(array('id'=>$classifyArr->parent_id));
     	}
+    	$cmd = Yii::app()->db->createCommand();
+    	$cmd->select("id,ext");
+    	$cmd->from('dz_picture');
+    	$cmd->where('pro_id=:pro_id',array(':pro_id'=>$id));
+    	$picure_arr = $cmd->queryAll();
+    	if ($picure_arr) {
+    		foreach ($picure_arr as $key=>$val) {
+    			$dir = floor($val['id']/1000);
+    			$picure_arr[$key]['src'] = "/images/product/{$dir}/{$val['id']}.{$val['ext']}";
+    		}
+    	}
+    	
     	if(isset($_POST['ParamValue'])){
      		$paramValModel->pro_id = (int)$_POST['Product']['id'];
 //     		$paramValueArr = $paramValModel->find('pro_id=:pro_id',array('pro_id'=>$paramValModel->pro_id));
@@ -149,6 +256,23 @@ class ProductController extends CController{
     				$saveFlag = $paramValModel->updateByPk($paramValueArr->id, $paramValModel->attributes);
     			}
     		}
+    		
+    		if ( $_FILES['picture']['name'] && in_array($_FILES['picture']["type"], $this->_uptypes) ) {
+    			$pictureModel = new Picture;
+    			$pictureModel->pro_id = $id;
+    			$pictureModel->ext = pathinfo($_FILES['picture']['name'], PATHINFO_EXTENSION );
+    			$pictureModel->add_time = time();
+    			$pictureModel->isNewRecord = true;
+    			$pictureModel->save(false);
+    			
+    			$dir = floor($pictureModel->attributes['id']/1000);
+    			$dir = "/server/dz/html/images/product/{$dir}/";
+    			if ( !file_exists($dir) ) {
+    				@mkdir($dir, 0777);
+    			}
+    			move_uploaded_file($_FILES['picture']['tmp_name'], $dir."{$pictureModel->attributes['id']}.{$pictureModel->attributes['ext']}");
+    		}
+    		
     		if($saveFlag){
     			header("Content-type: text/html; charset=utf-8");
     			echo '<script>alert("修改成功")</script>';
@@ -165,7 +289,10 @@ class ProductController extends CController{
             'paramValModel'=>$paramValModel,
             'paramArr'=>$paramArr,
     		'classifyArr'=>$classifyArr,
-    		'parentArr'=>$parentArr		
+    		'parentArr'=>$parentArr,
+        	'paramOptionValueArr'=>$paramOptionValueArr,
+    		'paramValueArr'=>$paramValueArr,
+    		'picure_arr' => $picure_arr
     	));
     	
     	 

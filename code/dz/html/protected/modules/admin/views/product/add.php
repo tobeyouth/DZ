@@ -10,5 +10,7 @@ echo $this->renderPartial('_form',array(
                 'classify_model'=>$classify_model,
                 'classify_arr'=>$classify_arr,
 				'parentArr'=>$parentArr,
-        
+				'paramValModel'=>$paramValModel,
+				'paramArr'=>$paramArr,
+        		'paramOptionValueArr'=>$paramOptionValueArr
 ));
