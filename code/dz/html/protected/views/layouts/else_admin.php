@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>表单构造器</title>
+	<title>添加产品类</title>
 
 	<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL;?>bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo ADMIN_CSS_URL;?>frame.css">

@@ -1,0 +1,166 @@
+// result list
+@import "element.scss";
+
+.result-choose {
+	padding:30px 0px 10px 0px;
+	// height:30px;
+	line-height:30px;
+	border-bottom:3px solid $light-border-color;
+	.choose-title {
+		float: left;
+		margin-right:20px; 
+	}
+	.nav > li > a {
+		padding:0px 15px;
+		font-size: 12px;
+	}
+	.number {
+		float: right;
+	}
+}
+
+
+.result-list {
+	margin-top:30px;
+	clear:both;
+	overflow:hidden;
+	zoom:1;
+	.item {
+		overflow: hidden;
+		position: relative;
+		zoom: 1;
+		padding: 20px 0px;
+		border-bottom: 1px solid $light-border-color;
+
+		.hd {
+			float: left;
+			overflow: hidden;
+			width: 200px;
+			height: 200px;
+			display: block;
+			border:1px solid $light-border-color;
+			img {
+				display: block;
+			}
+		}
+
+		.info {
+			margin:0px 100px 0px 220px;
+			overflow: hidden;
+			.title {
+				line-height: 24px;
+				font-size: 16px;
+				font-weight: bold;
+				margin-bottom: 10px;
+				a {
+					color: $link;
+				}
+			}
+
+			.info-table {
+				clear: both;
+				overflow: hidden;
+				zoom:1;
+				p {
+					line-height: 24px;
+					width: 50%;
+					float: left;
+				}
+				span.info-title{
+					color: #999;
+				}
+				a {
+					color: #333;
+				}
+			}
+		}
+
+		.price {
+			height: 24px;
+			line-height: 24px;
+			position: absolute;
+			top:20px;
+			right:5px;
+			font-size: 16px;
+			a {
+				color: #f00;
+			}	
+		}
+	}
+}
+.full-list {
+	width:1000px;
+	margin-right:-30px;
+	.item {
+		width: 220px;
+		height: 220px;
+		padding: 10px;
+		float: left;
+		margin:0px 30px 30px 0px;
+		border:1px solid $light-border-color;
+
+		.hd {
+			float: none;
+			overflow: hidden;
+			width: 200px;
+			height: 200px;
+			border:none;
+			a,img {
+				display: block;
+			}
+		}
+		.info {
+			margin:0px;
+			position: absolute;
+			height: 117px;
+			width: 100%;
+			padding:10px;
+			bottom:-200px;
+			left:0px;
+			overflow: hidden;
+			background: rgba(0,0,0,0.7);
+			@include transition();
+			.title {
+				line-height: 24px;
+				font-size: 16px;
+				font-weight: bold;
+				margin-bottom: 0px;
+				a {
+					color: #fff;
+				}
+			}
+
+			.info-table {
+				clear: both;
+				overflow: hidden;
+				zoom:1;
+				p {
+					color: #fff;
+					line-height: 20px;
+					width: 100%;
+					float: none;
+				}
+				span.info-title ,a{
+					color: #eee;
+				}
+			}
+		}
+
+		&:hover .info {
+			bottom:0px;
+		}
+
+		.price {
+			height: 24px;
+			line-height: 24px;
+			top:0px;
+			right:0px;
+			font-size: 16px;
+			padding:0px 6px;
+			background:rgba(0,0,0,0.7);
+			a {
+				color: #fff;
+			}	
+		}
+	}
+}

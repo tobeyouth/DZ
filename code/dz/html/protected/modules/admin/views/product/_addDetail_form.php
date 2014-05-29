@@ -106,6 +106,28 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
                     ?>
                     </div>
             </div>
+            <div class="form-group clearfix">
+                  <?php
+                    echo $form->labelEx($proModel,'picture',array('class'=>'col-sm-2 control-label'));
+                ?> 
+                <div class="col-sm-6">
+                    <input type="file" name="picture" id="picture" />
+                </div>
+                <div>
+                    <?php
+                        echo $form->error($proModel,'picture');
+                    ?>
+                </div>
+            </div>
+            <?php 
+                if ($picure_arr) {
+                	echo '<div class="form-group clearfix">';
+					foreach ($picure_arr as $val) {
+						echo '<img src="'.$val['src'].'" width="200" height="200" style="border:1px solid #ccc; margin-left:10px" />';
+					}
+					echo "</div>";
+                }
+            ?>
         </div>
         <!-- 产品信息 -->
         <?php
@@ -120,9 +142,18 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
 	                                  echo $form->textField($paramValModel,"param_{$v['id']}",array('class'=>'form-control'));
 	                                  echo $form->error($paramValModel,"param_{$v['id']}");
 	                           }else if("checkbox"==$v['form_option']){
-	                               echo $form->radioButtonList($paramValModel,"param_{$v['id']}",array('0'=>'是','1'=>'否'),array('separator'=>'&nbsp;&nbsp;&nbsp;'));
+	                               echo $form->radioButtonList($paramValModel,"param_{$v['id']}",$paramOptionValueArr[$v['id']],array('separator'=>'&nbsp;&nbsp;&nbsp;'));
 	                                echo $form->error($paramValModel,"param_{$v['id']}");
-	                           }
+	                           } else if ("select"==$v['form_option']) {
+									echo $form->dropDownList($paramValModel,"param_{$v['id']}", $paramOptionValueArr[$v['id']],array('class'=>'select'));
+									echo $form->error($paramValModel,"param_{$v['id']}");
+								} else if ("textarea"==$v['form_option']) {
+									echo $form->textArea($paramValModel,"param_{$v['id']}", array('rows'=>6, 'cols'=>50));
+									echo $form->error($paramValModel,"param_{$v['id']}");
+								} else if ("radio"==$v['form_option']) {
+									echo $form->radioButtonList($paramValModel,"param_{$v['id']}",$paramOptionValueArr[$v['id']],array('separator'=>'&nbsp;&nbsp;&nbsp;'));
+									echo $form->error($paramValModel,"param_{$v['id']}");
+								}
 	                           echo "</div>";
 	                           echo "</div>";
 				}

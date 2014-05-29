@@ -34,8 +34,8 @@ $(function () {
 			radioId = 1,
 			checkboxId = 1;
 
-
-		result.formName = $formName.text()+'&'+$("#classify_id").val();
+		var parent_id = $("#parent_id").val();
+		result.formName = $formName.text()+'&'+parent_id;
 
 		// 开始循环
 		// 输入框
@@ -138,7 +138,7 @@ $(function () {
 				'label' : label,
 				'options' : options.toString()
 			};
-			console.log(data);
+			//console.log(data);
 			result.checkbox.push(json2str(data));
 		});
 		// select
@@ -206,10 +206,8 @@ $(function () {
 			result.textarea.push(json2str(data));
 		});
 
-		//console.log(result);
-		//console.log(json2str(result,'@'));
 		var ajaxData = json2str(result,'@');
-
+		//console.log(ajaxData);
 		/**
 		 * @宋亮
 		 *
@@ -224,15 +222,18 @@ $(function () {
 		 * 需要你那边填充value
 		 */
 		$.post(
-                    '/index.php?r=admin/paramName/ajax',
-                    {json:ajaxData},
-                    function(data){
-                        if (data) {
-                            //alert(data);
-                            //location.href = '/index.php?r=admin/productClassify/index&parent_id=0';
-                        }
-                    }
-                );
+            '/index.php?r=admin/paramName/ajax',
+            {json:ajaxData},
+            function(classify_id){
+                if (classify_id) {
+                    alert('添加成功');
+                    location.href = '/index.php?r=admin/product/list&classify='+classify_id;
+                } else {
+                	alert('添加失败');
+                    location.href = '/index.php?r=admin/ProductClassify/addClass&id='+source_classify_id;
+                }
+            }
+        );
 		
 	});
 });

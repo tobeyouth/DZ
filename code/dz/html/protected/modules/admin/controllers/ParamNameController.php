@@ -66,12 +66,12 @@ class ParamNameController extends Controller
      */
     public function actionAdd()
     {
-        $classify_id = intval($_GET['classify_id']);
-        if (!$classify_id) {
+        $parent_id = intval($_GET['parent_id']);
+        if (!$parent_id) {
         	die;
         }
         $this->render('add',array(
-                'classify_id'=>$classify_id,
+                'parent_id'=>$parent_id,
             ));
     }
     
@@ -82,6 +82,7 @@ class ParamNameController extends Controller
     {
         $arr = explode('@', $_POST['json']);
         $param_name_model = new ParamName;
+        $product_classify_model = new ProductClassify;
         $param_option_arr = array();
         $param_value_column_arr = array();
         
@@ -90,9 +91,19 @@ class ParamNameController extends Controller
             foreach ($arr as $key=>$val) {
                 if (!$key) {
                     $tem = explode('&', $val);
-                    //$name = explode('=', $val);
-                    $classify_id = $tem[1];
-                    //$param_name = $name[1];
+                    //$classify_id = $tem[1];
+                    $name = explode('=', $tem[0]);
+                    $classify_name = $name[1];
+                    $parent_id = $tem[1];
+                    
+                    $product_classify_model->id = 0;
+                    $product_classify_model->name = $classify_name;
+                    $product_classify_model->parent_id = $parent_id;
+                    $product_classify_model->is_pro_class = 1;
+                    $product_classify_model->setIsNewRecord(true);
+                    $product_classify_model->save(false);
+                    
+                    $classify_id = Yii::app()->db->getLastInsertID();//$product_classify_model->attributes['id'];
                 } else {
                     $tem = explode(':', $val);
                     $type = $tem[0];
@@ -118,7 +129,7 @@ class ParamNameController extends Controller
                                     $param_name_model->classify_id = $classify_id;
                                     $param_name_model->search_option = $type != 'text' && $type != 'textarea' ? 1 : 0;
                                     $param_name_model->form_option = $type;
-                                    $param_name_model->save();
+                                    $param_name_model->save(false);
                                     $param_id = $param_name_model->attributes['id'];
                                     $param_value_column_arr[$param_id] = $param_id;
                                     ++$param_name_model->id;

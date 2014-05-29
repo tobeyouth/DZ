@@ -1,0 +1,54 @@
+@import "element.scss";
+
+// header
+.search-content {
+	padding:20px 0px 10px 0px;
+	.search-bar {
+		position: relative;
+		zoom: 1;
+		@extend %search-bar;
+	}
+}
+
+.hot-keys {
+	margin:0px;
+	@extend %hot-keys;
+}
+.wexin-code {
+	text-align:center;
+	padding:7px 0px;
+	p {
+		line-height: 20px;
+		font-size: 14px;
+		text-align: center;
+		padding:0px;
+		margin: 0px;
+	}
+}
+.logo-box {
+	width:185px;
+	float: left;
+}
+.logo {
+	display:block;
+	border:1px solid $border-color;
+	color:#fff;
+	height:160px;
+}
+.header-content {
+	margin-left:215px;
+	// margin-right:20px;
+	overflow: hidden;
+}
+.header-search {
+	padding:0px 15px 0px 0px;
+	background-color:#fff;
+}
+
+.search-content .title {
+	line-height:24px;
+	font-size:16px;
+	font-family:'Microsoft YaHei';
+	padding-bottom:10px;
+}
+

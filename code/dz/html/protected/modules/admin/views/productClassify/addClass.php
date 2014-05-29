@@ -1,7 +1,7 @@
 <?php //Yii::app()->clientScript->registerCoreScript('jquery');?>
 <div class="col-xs-10 col-md-10 right-content">
 	<h3>当前所在分类</h3>
-	<?php
+	<?php 
 	if(!empty($parentArr)){
 		$links = array(
 				$parentArr->name =>array('/admin/ProductClassify/addClass','id'=>$parentArr->id),
@@ -52,9 +52,9 @@
 				<span class="input-group-btn"> <!-- 					<button class="btn btn-default btn-group-lg" type="button"> -->
 				<!-- 						添加 <em class="glyphicon glyphicon-cloud"></em> --> <!-- 					</button> -->
 				<?php 
-					echo CHtml::submitButton('添加',array('class'=>'btn btn-default btn-group-lg'));
+					echo CHtml::submitButton('添加子类',array('class'=>'btn btn-default btn-group-lg'));
 				?>
-					<?php if ($form_builder_url) {?><a href="<?=$form_builder_url?>" class="btn" style="margin-left: 100px;">表单构造器</a><?php }?>
+					<?php if ($form_builder_url) {?><a href="<?=$form_builder_url?>" class="btn" style="margin-left: 100px;">添加产品类</a><?php }?>
 				</span>
 		</div>
 			 <?php 
@@ -115,23 +115,31 @@ echo CHtml::telField('ProductClassify[name]','',array('id'=>'changeName','class'
 			?>
 				<tr>
 					<th class="col-md-1"><?php echo ($k+1);?></th>
-					<td	class="col-md-4">
-						<?php echo CHtml::link($v->name,'');?>
+					<td	class="col-md-4"><span class="glyphicon <?php echo $v->is_pro_class ? 'glyphicon-cog' : 'glyphicon-align-left'?>">
+						<?php 
+							echo CHtml::link($v->name,$v->is_pro_class
+														?
+							Yii::app()->createUrl('admin/product/list',array('classify'=>$v->id))
+														:
+							Yii::app()->createUrl('admin/ProductClassify/addClass',array('id'=>$v->id))
+						);?>
 					</td>
-					<td class="col-md-2">
+					<!-- 
+					<td class="col-md-2"><span class="glyphicon glyphicon-cog">
 						<?php 
 							echo CHtml::link(CHtml::decode($v->name).'的商品',
 								Yii::app()->createUrl('admin/product/list',array('classify'=>$v->id))
 							);
 						?>
-					</td>
-					<td class="col-md-3">	
+					</span></td>
+					<td class="col-md-3"><span class="glyphicon glyphicon-align-left">
 						<?php 
 							echo CHtml::link(CHtml::decode($v->name).'的类别',
 									Yii::app()->createUrl('admin/ProductClassify/addClass',array('id'=>$v->id))
 								);
 						?>
-					</td>
+					</span></td>
+					 -->
 					<td class="col-md-2">
 						<!-- 						<button type="button" class="btn btn-warning update-name">修改名称</button> -->
 					

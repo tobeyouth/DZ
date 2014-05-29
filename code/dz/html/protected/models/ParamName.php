@@ -63,7 +63,7 @@ class ParamName extends CActiveRecord
 			'name' => 'Name',
 			'classify_id' => 'Classify',
 			'unit' => 'Unit',
-                        'parent_id' => 'Parent',
+            'parent_id' => 'Parent',
 			'sort' => 'Sort',
 			'is_del' => 'Is Del',
 		);
