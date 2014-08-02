@@ -80,7 +80,7 @@ class ProductController extends CController{
             	$pictureModel->save(false);
             	
             	$dir = floor($pictureModel->attributes['id']/1000);
-            	$dir = "/server/dz/html/images/product/{$dir}/";
+            	$dir = IMAGE_DIR.$dir;//"/server/dz/html/images/product/{$dir}/";
             	if ( !file_exists($dir) ) {
             		@mkdir($dir, 0777);
             	}
@@ -190,7 +190,7 @@ class ProductController extends CController{
     public function actionAddDetail($id)
     {
     	$proModel = $this->loadModel($id);
-    	$classId = $proModel->classify_id;
+    	$classId = $proModel->classify_id;print_r($proModel);
     	$cmd = Yii::app()->db->createCommand();
     	$cmd->select("*");
     	$cmd->from('dz_param_name');
