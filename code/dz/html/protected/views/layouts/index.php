@@ -1,16 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html>
+
 <head>
 	<meta charset="UTF-8">
-	<title>搜索结果页</title>
-	<link rel="stylesheet" href="<?php echo INDEX_CSS_URL;?>bootstrap.css" />
-	<link rel="stylesheet" href="<?php echo INDEX_CSS_URL;?>iconfont.css">
-	<link rel="stylesheet" href="<?php echo INDEX_CSS_URL;?>product-<?php echo $current;?>.css" />
-	<script type="text/javascript" src="<?php echo INDEX_JS_URL;?>jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="<?php echo INDEX_JS_URL;?>bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>产品库</title>
+	<link rel="stylesheet" href="<?=INDEX_CSS_URL?>bootstrap.css" />
+	<link rel="stylesheet" href="<?=INDEX_CSS_URL?>iconfont.css">
+	<link rel="stylesheet" href="<?=INDEX_CSS_URL?>product-<?=$this->css_name?>.css" />
+	<script src="<?=INDEX_JS_URL?>jquery-1.11.0.min.js"></script>
+	<script src="<?=INDEX_JS_URL?>bootstrap.min.js"></script>
 </head>
+
 <body>
-	<!-- header -->
+	<!-- 首页顶部 -->
 	<div class="wrap clearfix">
 		<div class="col-md-9 header-search">
 			<!-- logo -->
@@ -24,9 +27,10 @@
 				<div class="search-content">
 					<div class="title">最详细的影视资料库</div>
 					<div class="search-bar">
-						<form action="" method="get">
+						<form action="<?=$this->search_url?>" method="get">
 							<div class="form-inline">
-								<input type="text" class="search-input" name="search" autofocus="true" autocomplete="off" x-webkit-speech="" x-webkit-grammar="builtin:translate">
+								<input type="text" class="search-input" name="search" autofocus="true" autocomplete="off" x-webkit-speech x-webkit-grammar="builtin:translate" />
+								<?=$this->search_hidden_input?>
 								<button type="submit" class="btn btn-primary btn-lg search-btn">搜索</button>
 							</div>
 						</form>
@@ -52,4 +56,5 @@
 		echo $content;
 	?>
 </body>
+
 </html>
